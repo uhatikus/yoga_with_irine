@@ -11,14 +11,38 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as ScheduleImport } from './routes/schedule'
+import { Route as ReviewsImport } from './routes/reviews'
 import { Route as MainImport } from './routes/main'
+import { Route as GalleryImport } from './routes/gallery'
+import { Route as ContactImport } from './routes/contact'
 import { Route as LayoutImport } from './routes/_layout'
 import { Route as LayoutIndexImport } from './routes/_layout/index'
 
 // Create/Update Routes
 
+const ScheduleRoute = ScheduleImport.update({
+  path: '/schedule',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ReviewsRoute = ReviewsImport.update({
+  path: '/reviews',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const MainRoute = MainImport.update({
   path: '/main',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const GalleryRoute = GalleryImport.update({
+  path: '/gallery',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContactRoute = ContactImport.update({
+  path: '/contact',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -40,8 +64,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutImport
       parentRoute: typeof rootRoute
     }
+    '/contact': {
+      preLoaderRoute: typeof ContactImport
+      parentRoute: typeof rootRoute
+    }
+    '/gallery': {
+      preLoaderRoute: typeof GalleryImport
+      parentRoute: typeof rootRoute
+    }
     '/main': {
       preLoaderRoute: typeof MainImport
+      parentRoute: typeof rootRoute
+    }
+    '/reviews': {
+      preLoaderRoute: typeof ReviewsImport
+      parentRoute: typeof rootRoute
+    }
+    '/schedule': {
+      preLoaderRoute: typeof ScheduleImport
       parentRoute: typeof rootRoute
     }
     '/_layout/': {
@@ -55,7 +95,11 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   LayoutRoute.addChildren([LayoutIndexRoute]),
+  ContactRoute,
+  GalleryRoute,
   MainRoute,
+  ReviewsRoute,
+  ScheduleRoute,
 ])
 
 /* prettier-ignore-end */
