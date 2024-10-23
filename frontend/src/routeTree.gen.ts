@@ -11,35 +11,38 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as SignupImport } from './routes/signup'
-import { Route as ResetPasswordImport } from './routes/reset-password'
-import { Route as RecoverPasswordImport } from './routes/recover-password'
-import { Route as LoginImport } from './routes/login'
+import { Route as ScheduleImport } from './routes/schedule'
+import { Route as ReviewsImport } from './routes/reviews'
+import { Route as MainImport } from './routes/main'
+import { Route as GalleryImport } from './routes/gallery'
+import { Route as ContactImport } from './routes/contact'
 import { Route as LayoutImport } from './routes/_layout'
 import { Route as LayoutIndexImport } from './routes/_layout/index'
-import { Route as LayoutSettingsImport } from './routes/_layout/settings'
-import { Route as LayoutItemsImport } from './routes/_layout/items'
-import { Route as LayoutAdminImport } from './routes/_layout/admin'
 
 // Create/Update Routes
 
-const SignupRoute = SignupImport.update({
-  path: '/signup',
+const ScheduleRoute = ScheduleImport.update({
+  path: '/schedule',
   getParentRoute: () => rootRoute,
 } as any)
 
-const ResetPasswordRoute = ResetPasswordImport.update({
-  path: '/reset-password',
+const ReviewsRoute = ReviewsImport.update({
+  path: '/reviews',
   getParentRoute: () => rootRoute,
 } as any)
 
-const RecoverPasswordRoute = RecoverPasswordImport.update({
-  path: '/recover-password',
+const MainRoute = MainImport.update({
+  path: '/main',
   getParentRoute: () => rootRoute,
 } as any)
 
-const LoginRoute = LoginImport.update({
-  path: '/login',
+const GalleryRoute = GalleryImport.update({
+  path: '/gallery',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContactRoute = ContactImport.update({
+  path: '/contact',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -53,21 +56,6 @@ const LayoutIndexRoute = LayoutIndexImport.update({
   getParentRoute: () => LayoutRoute,
 } as any)
 
-const LayoutSettingsRoute = LayoutSettingsImport.update({
-  path: '/settings',
-  getParentRoute: () => LayoutRoute,
-} as any)
-
-const LayoutItemsRoute = LayoutItemsImport.update({
-  path: '/items',
-  getParentRoute: () => LayoutRoute,
-} as any)
-
-const LayoutAdminRoute = LayoutAdminImport.update({
-  path: '/admin',
-  getParentRoute: () => LayoutRoute,
-} as any)
-
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -76,33 +64,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutImport
       parentRoute: typeof rootRoute
     }
-    '/login': {
-      preLoaderRoute: typeof LoginImport
+    '/contact': {
+      preLoaderRoute: typeof ContactImport
       parentRoute: typeof rootRoute
     }
-    '/recover-password': {
-      preLoaderRoute: typeof RecoverPasswordImport
+    '/gallery': {
+      preLoaderRoute: typeof GalleryImport
       parentRoute: typeof rootRoute
     }
-    '/reset-password': {
-      preLoaderRoute: typeof ResetPasswordImport
+    '/main': {
+      preLoaderRoute: typeof MainImport
       parentRoute: typeof rootRoute
     }
-    '/signup': {
-      preLoaderRoute: typeof SignupImport
+    '/reviews': {
+      preLoaderRoute: typeof ReviewsImport
       parentRoute: typeof rootRoute
     }
-    '/_layout/admin': {
-      preLoaderRoute: typeof LayoutAdminImport
-      parentRoute: typeof LayoutImport
-    }
-    '/_layout/items': {
-      preLoaderRoute: typeof LayoutItemsImport
-      parentRoute: typeof LayoutImport
-    }
-    '/_layout/settings': {
-      preLoaderRoute: typeof LayoutSettingsImport
-      parentRoute: typeof LayoutImport
+    '/schedule': {
+      preLoaderRoute: typeof ScheduleImport
+      parentRoute: typeof rootRoute
     }
     '/_layout/': {
       preLoaderRoute: typeof LayoutIndexImport
@@ -114,16 +94,12 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren([
-  LayoutRoute.addChildren([
-    LayoutAdminRoute,
-    LayoutItemsRoute,
-    LayoutSettingsRoute,
-    LayoutIndexRoute,
-  ]),
-  LoginRoute,
-  RecoverPasswordRoute,
-  ResetPasswordRoute,
-  SignupRoute,
+  LayoutRoute.addChildren([LayoutIndexRoute]),
+  ContactRoute,
+  GalleryRoute,
+  MainRoute,
+  ReviewsRoute,
+  ScheduleRoute,
 ])
 
 /* prettier-ignore-end */
