@@ -13,9 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as ScheduleImport } from './routes/schedule'
 import { Route as ReviewsImport } from './routes/reviews'
-import { Route as MainImport } from './routes/main'
-import { Route as GalleryImport } from './routes/gallery'
-import { Route as ContactImport } from './routes/contact'
+import { Route as ContactsImport } from './routes/contacts'
 import { Route as LayoutImport } from './routes/_layout'
 import { Route as LayoutIndexImport } from './routes/_layout/index'
 
@@ -31,18 +29,8 @@ const ReviewsRoute = ReviewsImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const MainRoute = MainImport.update({
-  path: '/main',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const GalleryRoute = GalleryImport.update({
-  path: '/gallery',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ContactRoute = ContactImport.update({
-  path: '/contact',
+const ContactsRoute = ContactsImport.update({
+  path: '/contacts',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -64,16 +52,8 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutImport
       parentRoute: typeof rootRoute
     }
-    '/contact': {
-      preLoaderRoute: typeof ContactImport
-      parentRoute: typeof rootRoute
-    }
-    '/gallery': {
-      preLoaderRoute: typeof GalleryImport
-      parentRoute: typeof rootRoute
-    }
-    '/main': {
-      preLoaderRoute: typeof MainImport
+    '/contacts': {
+      preLoaderRoute: typeof ContactsImport
       parentRoute: typeof rootRoute
     }
     '/reviews': {
@@ -95,9 +75,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   LayoutRoute.addChildren([LayoutIndexRoute]),
-  ContactRoute,
-  GalleryRoute,
-  MainRoute,
+  ContactsRoute,
   ReviewsRoute,
   ScheduleRoute,
 ])

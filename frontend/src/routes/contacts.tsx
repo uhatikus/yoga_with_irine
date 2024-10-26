@@ -1,4 +1,3 @@
-import { Navbar } from "../components/Navbar";
 import styled from "@emotion/styled";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -11,14 +10,13 @@ const ContactInfo = styled.div`
   margin: 1rem 0;
 `;
 
-export const Route = createFileRoute("/contact")({
+export const Route = createFileRoute("/contacts")({
   component: Contact,
 });
 
 function Contact() {
   return (
     <>
-      <Navbar />
       <ContactContainer>
         <h2>Contact Me</h2>
         <ContactInfo>

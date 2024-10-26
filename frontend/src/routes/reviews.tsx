@@ -1,4 +1,3 @@
-import { Navbar } from "../components/Navbar";
 import styled from "@emotion/styled";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -19,7 +18,6 @@ export const Route = createFileRoute("/reviews")({
 function Reviews() {
   return (
     <>
-      <Navbar />
       <ReviewSection>
         <h2>Student Reviews</h2>
         <Review>

@@ -1,4 +1,3 @@
-import { Navbar } from "../components/Navbar";
 import styled from "@emotion/styled";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -13,7 +12,6 @@ export const Route = createFileRoute("/schedule")({
 function Schedule() {
   return (
     <>
-      <Navbar />
       <ScheduleContainer>
         <h2>Upcoming Yoga Classes</h2>
         {/* <Calendar /> */}
