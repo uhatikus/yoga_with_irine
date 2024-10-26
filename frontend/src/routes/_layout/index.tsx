@@ -10,7 +10,7 @@ function Main() {
     <>
       <Container maxW="100%" margin="0" padding="0">
         <Box
-          bgImage="/public/assets/images/YOGA_MAIN.jpg"
+          bgImage="./public/assets/images/YOGA_MAIN.jpg"
           bgSize="cover"
           bgPosition="center"
           clipPath="inset(34% 0 10% 0)"
