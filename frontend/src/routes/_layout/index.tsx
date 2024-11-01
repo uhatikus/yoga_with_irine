@@ -19,7 +19,7 @@ function Main() {
         >
           <Box pt={500}>
             <Text fontSize="90" color="#3399ff" opacity="50%">
-              Open Soul
+              Yoga
             </Text>
           </Box>
         </Box>
