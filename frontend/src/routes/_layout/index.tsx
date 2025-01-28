@@ -1,111 +1,105 @@
-import { Box, Container, Text } from "@chakra-ui/react";
+import { Container, Text } from "@chakra-ui/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ParallaxSection } from "../../components/common/ParallaxSection";
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/_layout/")({
   component: Main,
 });
 
 function Main() {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div style={{ position: "relative", height: "500vh", overflowX: "hidden" }}>
+    <div
+      style={{
+        position: "relative",
+        // height: "400vh",
+        width: "100%",
+        // overflowX: "hidden",
+      }}
+    >
       {/* Background sections - slower movement */}
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          transform: `translateY(${-scrollY * 0.5}px)`,
-        }}
-      >
-        {/* Blue background section */}
+      <ParallaxSection speed={-0.5}>
+        {/* Firt background section */}
         <div
           style={{
+            backgroundImage: "url(assets/images/YOGA_MAIN.jpg)",
+            // "linear-gradient(to bottom, rgba(255, 255, 255, 1) 500px, rgba(255, 255, 255, 0.8) 520px, rgba(255, 255, 255, 0.6) 540px, rgba(255, 255, 255, 0.3) 560px, rgba(255, 255, 255, 0.15) 580px, rgba(255, 255, 255, 0) 600px),  url(assets/images/YOGA_MAIN.jpg)",
+            backgroundSize: "cover",
             width: "100%",
-            height: "100vh",
+            height: "1500px",
             backgroundColor: "#3b82f6",
+            backgroundPosition: "center",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            // margin: "-400px 0 -100px 0",
           }}
-        >
-          <h2
-            style={{
-              fontSize: "4rem",
-              fontWeight: "bold",
-              color: "white",
-            }}
-          >
-            Background Blue Section
-          </h2>
-        </div>
+        ></div>
 
-        {/* Green background section */}
+        {/* Second background section */}
         <div
           style={{
+            backgroundImage: "url(assets/images/YOGA_MAIN.jpg)",
             width: "100%",
-            height: "100vh",
+            height: "1500px",
             backgroundColor: "#22c55e",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
           }}
-        >
-          <h2
-            style={{
-              fontSize: "4rem",
-              fontWeight: "bold",
-              color: "white",
-            }}
-          >
-            Background Green Section
-          </h2>
-        </div>
-      </div>
+        ></div>
+        {/* Third background section */}
+        {/* <div
+          style={{
+            backgroundImage: "url(assets/images/YOGA_MAIN.jpg)",
+            width: "100%",
+            height: "1500px",
+            backgroundColor: "#22c55e",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        ></div> */}
+      </ParallaxSection>
 
       {/* Foreground sections with transparent gaps */}
       <div style={{ position: "relative" }}>
-        {/* First colored section */}
+        {/* First cotent section */}
         <div
           style={{
-            height: "100vh",
-            width: "100vh",
-            backgroundColor: "#ef4444",
-            opacity: 0.8,
+            height: "100px",
+            width: "100%",
+            backgroundColor: "white",
+            // opacity: 0.8,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
+          {/* <Text fontSize="50" color="#3399ff" opacity="50%">
+            Yoga Open Soul
+          </Text> */}
           <h2
             style={{
               fontSize: "4rem",
               fontWeight: "bold",
-              color: "white",
+              color: "#3399ff",
+              opacity: "50%",
             }}
           >
-            Front Red Section
+            Yoga Open Soul
           </h2>
         </div>
 
         {/* Transparent gap */}
         <div
           style={{
-            height: "100vh",
-            width: "100vh",
+            height: "1000px",
+            width: "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -118,17 +112,17 @@ function Main() {
               color: "white",
             }}
           >
-            Transparent Gap
+            Welcome
           </h2>
         </div>
 
-        {/* Second colored section */}
+        {/* Second content section */}
         <div
           style={{
-            height: "100vh",
-            width: "100vh",
-            backgroundColor: "#facc15",
-            opacity: 0.8,
+            height: "1000px",
+            width: "100%",
+            backgroundColor: "white",
+            // opacity: 0.8,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -141,14 +135,14 @@ function Main() {
               color: "black",
             }}
           >
-            Front Yellow Section
+            First Content Section
           </h2>
         </div>
 
         {/* Transparent gap */}
         <div
           style={{
-            height: "100vh",
+            height: "1000px",
             width: "100%",
             display: "flex",
             alignItems: "center",
@@ -162,17 +156,60 @@ function Main() {
               color: "white",
             }}
           >
-            Transparent Gap
+            Open Your Soul to Yourself
+          </h2>
+        </div>
+
+        {/* Third contet section */}
+        <div
+          style={{
+            height: "1000px",
+            width: "100%",
+            backgroundColor: "white",
+            // opacity: 0.8,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "4rem",
+              fontWeight: "bold",
+              color: "black",
+            }}
+          >
+            Second Content Section
+          </h2>
+        </div>
+        {/* Transparent gap */}
+        <div
+          style={{
+            height: "1000px",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "4rem",
+              fontWeight: "bold",
+              color: "white",
+            }}
+          >
+            Feel the universe
           </h2>
         </div>
 
         {/* Third colored section */}
         <div
           style={{
-            height: "100vh",
+            height: "1000px",
             width: "100%",
-            backgroundColor: "#6b7280",
-            opacity: 0.8,
+            backgroundColor: "white",
+            // opacity: 0.8,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -182,10 +219,10 @@ function Main() {
             style={{
               fontSize: "4rem",
               fontWeight: "bold",
-              color: "white",
+              color: "black",
             }}
           >
-            Front Grey Section
+            Third Content Section
           </h2>
         </div>
       </div>
@@ -331,7 +368,7 @@ function Main() {
       </div>
       {/* </ParallaxSection> */}
       {/* First background image */}
-      <ParallaxSection speed={0.5} className="opacity-fade">
+      <ParallaxSection speed={0.5}>
         {/* <div
               className="z-10"
               style={{
