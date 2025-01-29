@@ -1,6 +1,6 @@
-import { Container, Text } from "@chakra-ui/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ParallaxSection } from "../../components/common/ParallaxSection";
+import { Carousel } from "../../components/common/Carousel";
 // import React, { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/_layout/")({
@@ -22,27 +22,41 @@ function Main() {
         {/* Firt background section */}
         <div
           style={{
-            backgroundImage: "url(assets/images/YOGA_MAIN.jpg)",
-            // "linear-gradient(to bottom, rgba(255, 255, 255, 1) 500px, rgba(255, 255, 255, 0.8) 520px, rgba(255, 255, 255, 0.6) 540px, rgba(255, 255, 255, 0.3) 560px, rgba(255, 255, 255, 0.15) 580px, rgba(255, 255, 255, 0) 600px),  url(assets/images/YOGA_MAIN.jpg)",
+            backgroundImage: "url(assets/images/YOGA_MAIN_good.jpg)",
             backgroundSize: "cover",
             width: "100%",
-            height: "1500px",
-            backgroundColor: "#3b82f6",
+            height: "1000px",
+            backgroundColor: "white",
             backgroundPosition: "center",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            // margin: "-400px 0 -100px 0",
+            margin: "115px 0 -60px 0",
           }}
         ></div>
 
         {/* Second background section */}
         <div
           style={{
-            backgroundImage: "url(assets/images/YOGA_MAIN.jpg)",
+            backgroundImage: "url(assets/images/YOGA_IN_PARK.jpg)",
             width: "100%",
             height: "1500px",
-            backgroundColor: "#22c55e",
+            backgroundColor: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            margin: "0 0 -500px 0",
+          }}
+        ></div>
+        {/* Third background section */}
+        <div
+          style={{
+            backgroundImage: "url(assets/images/YOGA_IN_STUDIO.jpg)",
+            width: "100%",
+            height: "1500px",
+            backgroundColor: "white",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -50,20 +64,6 @@ function Main() {
             backgroundSize: "cover",
           }}
         ></div>
-        {/* Third background section */}
-        {/* <div
-          style={{
-            backgroundImage: "url(assets/images/YOGA_MAIN.jpg)",
-            width: "100%",
-            height: "1500px",
-            backgroundColor: "#22c55e",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        ></div> */}
       </ParallaxSection>
 
       {/* Foreground sections with transparent gaps */}
@@ -95,10 +95,10 @@ function Main() {
           </h2>
         </div>
 
-        {/* Transparent gap */}
+        {/* FIRST Transparent gap */}
         <div
           style={{
-            height: "1000px",
+            height: "950px",
             width: "100%",
             display: "flex",
             alignItems: "center",
@@ -119,27 +119,47 @@ function Main() {
         {/* Second content section */}
         <div
           style={{
-            height: "1000px",
+            height: "1100px",
             width: "100%",
             backgroundColor: "white",
-            // opacity: 0.8,
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
           <h2
             style={{
+              height: "400px",
               fontSize: "4rem",
               fontWeight: "bold",
               color: "black",
+              // backgroundColor: "yellow",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            First Content Section
+            I am the best yoga teacher. Now I will explain why
           </h2>
+          <div
+            style={{
+              height: "500px",
+            }}
+          >
+            <Carousel
+              images={[
+                "assets/images/YOGA_IN_PARK.jpg",
+                "assets/images/YOGA_MAIN.jpg",
+                "assets/images/Tibidabo.jpg",
+                "assets/images/YOGA_IN_STUDIO.jpg",
+                "assets/images/test.jpg",
+              ]}
+            />
+          </div>
         </div>
 
-        {/* Transparent gap */}
+        {/* Second Transparent gap */}
         <div
           style={{
             height: "1000px",
@@ -179,7 +199,9 @@ function Main() {
               color: "black",
             }}
           >
-            Second Content Section
+            Second Content Section. <br></br>Here is my schedule: <br></br>
+            Tuesday: 19:30-21:00 <br></br> Friday: 19:30-21:00<br></br> Sunday:
+            12:15-13:45
           </h2>
         </div>
         {/* Transparent gap */}
@@ -206,7 +228,7 @@ function Main() {
         {/* Third colored section */}
         <div
           style={{
-            height: "1000px",
+            height: "1200px",
             width: "100%",
             backgroundColor: "white",
             // opacity: 0.8,
@@ -222,247 +244,12 @@ function Main() {
               color: "black",
             }}
           >
-            Third Content Section
+            All reviews are great. <br></br>
+            You can find us on the map.<br></br>
+            Some contacts will be here.
           </h2>
         </div>
       </div>
     </div>
   );
 }
-
-{
-  /* <div
-            className="absolute inset-0 bg-cover bg-center z-10"
-            style={{
-              backgroundImage: "url(/assets/images/YOGA_MAIN.jpg)",
-              opacity: 0.7,
-            }}
-          /> */
-}
-{
-  /* Second background image */
-}
-{
-  /* <div
-            className="absolute inset-0 bg-cover bg-center z-20"
-            style={{
-              backgroundImage: "url(/assets/images/YOGA_MAIN.jpg)",
-              opacity: 0.5,
-              mixBlendMode: "overlay",
-            }}
-          /> */
-}
-{
-  /* Content overlay */
-}
-{
-  /* <div className="relative z-30 text-white p-4">
-            <h1>Your Content Here</h1>
-          </div> */
-}
-
-// function Main() {
-//   return (
-//     <>
-//       <Container maxW="100%" margin="0" padding="0">
-//         {/* <ParallaxSection speed={-0.5} className="opacity-fade"> */}
-//         <div
-//           className="opacity-fade"
-//           style={{
-//             width: "100%",
-//             height: "800px",
-//             backgroundColor: "white",
-//             display: "flex",
-//             alignItems: "center",
-//             justifyContent: "center",
-//           }}
-//         >
-//           <Text fontSize="50" color="#3399ff" opacity="50%">
-//             Yoga Open Soul
-//           </Text>
-//         </div>
-//         {/* </ParallaxSection> */}
-
-//         <div className="relative w-full h-screen overflow-hidden">
-//           {/* First background image */}
-//           <ParallaxSection speed={0.5} className="opacity-fade">
-//             <div
-//               className="absolute inset-0 bg-cover bg-center z-10"
-//               style={{
-//                 backgroundImage:
-//                   // "url(assets/images/YOGA_MAIN.jpg)",
-//                   "linear-gradient(to bottom, rgba(255, 255, 255, 1) 500px, rgba(255, 255, 255, 0.8) 520px, rgba(255, 255, 255, 0.6) 540px, rgba(255, 255, 255, 0.3) 560px, rgba(255, 255, 255, 0.15) 580px, rgba(255, 255, 255, 0) 600px),  url(assets/images/YOGA_MAIN.jpg)",
-//                 height: "1500px",
-//                 width: "100%",
-//                 margin: "-500px 0 -100px 0",
-//                 backgroundSize: "cover",
-//                 backgroundPosition: "center",
-//               }}
-//             ></div>
-//           </ParallaxSection>
-//           {/* <ParallaxSection speed={-0.5} className="relative z-30"> */}
-//           <div
-//             style={{
-//               width: "100%",
-//               height: "300px",
-//               backgroundColor: "white",
-//               // margin: "0 0 -600px 0",
-//             }}
-//           >
-//             <Text fontSize="90" color="#ff99ff" opacity="50%">
-//               Yoga Open Soul
-//             </Text>
-//           </div>
-//           {/* </ParallaxSection> */}
-//           <ParallaxSection speed={0.5} className="opacity-fade">
-//             <div
-//               className="absolute inset-0 bg-cover bg-center z-20"
-//               style={{
-//                 backgroundImage: "url(assets/images/YOGA_MAIN.jpg)",
-//                 // "linear-gradient(to bottom, rgba(255, 255, 255, 1) 500px, rgba(255, 255, 255, 0.8) 520px, rgba(255, 255, 255, 0.6) 540px, rgba(255, 255, 255, 0.3) 560px, rgba(255, 255, 255, 0.15) 580px, rgba(255, 255, 255, 0) 600px),  url(assets/images/YOGA_MAIN.jpg)",
-//                 height: "1500px",
-//                 width: "100%",
-//                 margin: "0px 0 0px 0",
-//                 backgroundSize: "cover",
-//                 backgroundPosition: "center",
-//               }}
-//             ></div>
-//           </ParallaxSection>
-//           {/* <ParallaxSection speed={-0.5} className="relative z-30"> */}
-//           <div
-//             style={{
-//               width: "100%",
-//               height: "1000px",
-//               backgroundColor: "white",
-//             }}
-//           >
-//             <Text fontSize="90" color="#ff99ff" opacity="50%">
-//               Yoga Open Soul
-//             </Text>
-//           </div>
-//           {/* </ParallaxSection> */}
-//         </div>
-//       </Container>
-//     </>
-//   );
-// }
-
-<>
-  <Container maxW="100%" margin="0" padding="0">
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* <ParallaxSection speed={-0.5} className="opacity-fade"> */}
-      <div
-        className="opacity-fade"
-        style={{
-          width: "100%",
-          height: "100px",
-          backgroundColor: "white",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Text fontSize="50" color="#3399ff" opacity="50%">
-          Yoga Open Soul
-        </Text>
-      </div>
-      {/* </ParallaxSection> */}
-      {/* First background image */}
-      <ParallaxSection speed={0.5}>
-        {/* <div
-              className="z-10"
-              style={{
-                backgroundImage:
-                  // "url(assets/images/YOGA_MAIN.jpg)",
-                  "linear-gradient(to bottom, rgba(255, 255, 255, 1) 500px, rgba(255, 255, 255, 0.8) 520px, rgba(255, 255, 255, 0.6) 540px, rgba(255, 255, 255, 0.3) 560px, rgba(255, 255, 255, 0.15) 580px, rgba(255, 255, 255, 0) 600px),  url(assets/images/YOGA_MAIN.jpg)",
-                height: "1500px",
-                width: "100%",
-                margin: "-500px 0 -100px 0",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            ></div> */}
-        <div className="z-10 relative">
-          {" "}
-          {/* Added relative for positioning overlay */}
-          <img
-            src="/assets/images/YOGA_MAIN.jpg"
-            alt="Yoga" // Add a descriptive alt text
-            style={{
-              height: "1500px",
-              width: "100%",
-              objectFit: "cover", // Maintain aspect ratio and cover the area
-              position: "absolute", // Allow overlay to be positioned
-              top: 0,
-              left: 0,
-            }}
-          />
-          <div // Overlay with gradient
-            style={{
-              position: "absolute", // Position over the image
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "600px", // Match the gradient height
-              background:
-                "linear-gradient(to bottom, rgba(255, 255, 255, 1) 500px, rgba(255, 255, 255, 0.8) 520px, rgba(255, 255, 255, 0.6) 540px, rgba(255, 255, 255, 0.3) 560px, rgba(255, 255, 255, 0.15) 580px, rgba(255, 255, 255, 0) 600px)",
-            }}
-          />
-          {/* Content that you want to appear over the image and the gradient */}
-          <div
-            className="relative z-20"
-            style={{
-              /* Add any styles you want here */ paddingTop: "500px",
-              paddingLeft: "50px",
-            }}
-          >
-            {/* Your content here */}
-            <h1>Yoga</h1>
-            <p>Some yoga text...</p>
-          </div>
-        </div>
-      </ParallaxSection>
-      {/* <ParallaxSection speed={-0.5} className="relative z-30"> */}
-      <div
-        style={{
-          width: "100%",
-          height: "300px",
-          backgroundColor: "white",
-          // margin: "0 0 -600px 0",
-        }}
-      >
-        <Text fontSize="90" color="#ff99ff" opacity="50%">
-          Yoga Open Soul
-        </Text>
-      </div>
-      {/* </ParallaxSection>  */}
-      {/* <ParallaxSection speed={0.5} className="opacity-fade"> */}
-      {/* <div
-            className="absolute inset-0 bg-cover bg-center z-20"
-            style={{
-              backgroundImage: "url(assets/images/YOGA_MAIN.jpg)",
-              // "linear-gradient(to bottom, rgba(255, 255, 255, 1) 500px, rgba(255, 255, 255, 0.8) 520px, rgba(255, 255, 255, 0.6) 540px, rgba(255, 255, 255, 0.3) 560px, rgba(255, 255, 255, 0.15) 580px, rgba(255, 255, 255, 0) 600px),  url(assets/images/YOGA_MAIN.jpg)",
-              height: "1500px",
-              width: "100%",
-              margin: "0px 0 0px 0",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          ></div> */}
-      {/* </ParallaxSection> */}
-      {/* <ParallaxSection speed={-0.5} className="relative z-30">
-            <div
-              style={{
-                width: "100%",
-                height: "1000px",
-                backgroundColor: "white",
-              }}
-            >
-              <Text fontSize="90" color="#ff99ff" opacity="50%">
-                Yoga Open Soul
-              </Text>
-            </div>
-          </ParallaxSection> */}
-    </div>
-  </Container>
-</>;
