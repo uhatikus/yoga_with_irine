@@ -2,36 +2,32 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
 import { LanguageSwitcher } from "../translation/LanguageSwitcher";
 import { Menu, X } from "lucide-react";
+import useIsMobile from "../../hooks/useIsMobile";
+import ButtonWithScroll, { ScrollingSection } from "./ButtonWithScroll";
+import DownloadButton from "../common/DownloadButton";
 
 const HeaderSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
+  const isMobile = useIsMobile();
   const t = useTranslation();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-      if (window.innerWidth >= 768) setIsMenuOpen(false); // Close menu on resize to larger screen
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    if (!isMobile) {
+      setIsMenuOpen(false);
     }
-  };
+  }, [isMobile]);
 
-  const title: string = "Schedule";
-  const section_id: string = "schedule_section";
+  const sections: ScrollingSection[] = [
+    { section_name: "About", section_id: "about_section" },
+    { section_name: "Schedule", section_id: "schedule_section" },
+    { section_name: "Q&A", section_id: "qa_section" },
+    { section_name: "Reviews", section_id: "reviews_section" },
+    { section_name: "Contacts", section_id: "contacts_section" },
+  ];
 
   return (
     <div
@@ -39,59 +35,83 @@ const HeaderSection = () => {
         height: "100px",
         width: "100%",
         backgroundColor: "white",
-        // opacity: 0.8,
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        // justifyContent: "center",
+        justifyContent: "space-between",
+        paddingInline: "40px",
       }}
     >
-      {/* <Text fontSize="50" color="#3399ff" opacity="50%">
-            Yoga Open Soul
-          </Text> */}
-      {!isMobile && (
-        <button
-          onClick={() => scrollToSection(section_id)}
-          style={{
-            color: "gray",
-            fontWeight: "500",
-            transition: "color 0.2s ease-in-out",
-            //   "&:hover": {
-            //     color: "black",
-            //   },
-          }}
-        >
-          {title}
-        </button>
-      )}
-      <h2
+      <div
         style={{
-          fontSize: "4rem",
-          fontWeight: "bold",
-          color: "#3399ff",
-          opacity: "50%",
+          height: "100px",
+          width: "80%",
+          backgroundColor: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "left",
         }}
       >
-        {/* Yoga Open Soul */}
-        {/* {language} */}
-        {/* {t.nav.about} */}
-      </h2>
-      <LanguageSwitcher />
-      {isMobile && (
-        <button
+        {!isMobile &&
+          sections.map((section) => (
+            <ButtonWithScroll key={section.section_id} {...section} />
+          ))}
+        {isMobile && (
+          <button
+            style={{
+              background: "none",
+              border: "none",
+              color: "black",
+              cursor: "pointer",
+              padding: "8px",
+              minWidth: "20px",
+            }}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        )}
+        <div
           style={{
-            background: "none",
-            border: "none",
-            color: "black",
-            cursor: "pointer",
-            padding: "8px",
-            minWidth: "20px",
+            position: "absolute",
+            top: "50px",
+            left: 0,
+            marginTop: "8px",
+            width: "200px",
+            backgroundColor: "white",
+            borderRadius: "6px",
+            // boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+            zIndex: 2000, // Increased z-index
+            // border: "1px solid #ddd", // Added border to make it visible
+            display: isMenuOpen ? "flex" : "none", // Alternative to conditional rendering
+            flexDirection: "column",
           }}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle Menu"
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      )}
+          {sections.map((section) => (
+            <ButtonWithScroll key={section.section_id} {...section} />
+          ))}
+        </div>
+      </div>
+      <div
+        style={{
+          height: "100px",
+          width: "20%",
+          backgroundColor: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "right",
+          paddingLeft: "40px",
+        }}
+      >
+        {!isMobile && (
+          <DownloadButton
+            text="Certificate"
+            pdfPath="/assets/files/Certificate_Irina_Malyants_200_Hour_Hatha_Yoga_Teacher.pdf"
+          />
+        )}
+        <LanguageSwitcher />
+      </div>
     </div>
   );
 };
