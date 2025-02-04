@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useTranslation } from "../../hooks/useTranslation";
+// import { useTranslation } from "../../hooks/useTranslation";
 import { LanguageSwitcher } from "../translation/LanguageSwitcher";
 import { Menu, X } from "lucide-react";
 import useIsMobile from "../../hooks/useIsMobile";
@@ -8,11 +8,11 @@ import ButtonWithScroll, { ScrollingSection } from "./ButtonWithScroll";
 const HeaderSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
-  const t = useTranslation();
+  //   const t = useTranslation();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  //   const toggleMenu = () => {
+  //     setIsMenuOpen(!isMenuOpen);
+  //   };
 
   const handleCertificateClick = () => {
     const url = "/certificate";
