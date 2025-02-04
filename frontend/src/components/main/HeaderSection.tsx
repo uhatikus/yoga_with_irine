@@ -4,7 +4,6 @@ import { LanguageSwitcher } from "../translation/LanguageSwitcher";
 import { Menu, X } from "lucide-react";
 import useIsMobile from "../../hooks/useIsMobile";
 import ButtonWithScroll, { ScrollingSection } from "./ButtonWithScroll";
-import DownloadButton from "../common/DownloadButton";
 
 const HeaderSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +12,11 @@ const HeaderSection = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleCertificateClick = () => {
+    const url = "/certificate";
+    window.open(url, "_blank");
   };
 
   useEffect(() => {
@@ -105,10 +109,20 @@ const HeaderSection = () => {
         }}
       >
         {!isMobile && (
-          <DownloadButton
-            text="Certificate"
-            pdfPath="/assets/files/Certificate_Irina_Malyants_200_Hour_Hatha_Yoga_Teacher.pdf"
-          />
+          <div
+            onClick={handleCertificateClick}
+            style={{
+              cursor: "pointer",
+              color: "gray",
+              fontWeight: "500",
+              transition: "color 0.2s ease-in-out",
+              paddingRight: "40px",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "black")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "gray")}
+          >
+            Certificate
+          </div>
         )}
         <LanguageSwitcher />
       </div>
