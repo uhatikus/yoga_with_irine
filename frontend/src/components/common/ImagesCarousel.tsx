@@ -39,7 +39,7 @@ export const Carousel: React.FC<CarouselProps> = ({ images }) => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
     return () => clearInterval(interval); // Clear interval on component unmount
-  }, []);
+  }, [currentIndex]);
 
   return (
     <div style={{ position: "relative", width: "100%", overflow: "hidden" }}>
