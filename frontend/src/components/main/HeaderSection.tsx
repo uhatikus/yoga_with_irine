@@ -7,6 +7,8 @@ import ButtonWithScroll, { ScrollingSection } from "./ButtonWithScroll";
 
 const HeaderSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScreenImage, setIsScreenImage] = useState(false);
+
   const isMobile = useIsMobile();
   //   const t = useTranslation();
 
@@ -15,8 +17,10 @@ const HeaderSection = () => {
   //   };
 
   const handleCertificateClick = () => {
-    const url = "/certificate";
-    window.open(url, "_blank");
+    setIsScreenImage(true);
+    setIsMenuOpen(false);
+    // const url = "/certificate";
+    // window.open(url, "_blank");
   };
 
   useEffect(() => {
@@ -82,19 +86,39 @@ const HeaderSection = () => {
             top: "50px",
             left: 0,
             marginTop: "8px",
-            width: "200px",
+            width: "300px",
             backgroundColor: "white",
             borderRadius: "6px",
+            fontSize: "1.8rem",
             // boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
             zIndex: 2000, // Increased z-index
             // border: "1px solid #ddd", // Added border to make it visible
             display: isMenuOpen ? "flex" : "none", // Alternative to conditional rendering
             flexDirection: "column",
+            paddingLeft: "40px",
           }}
         >
           {sections.map((section) => (
             <ButtonWithScroll key={section.section_id} {...section} />
           ))}
+          <div
+            onClick={handleCertificateClick}
+            style={{
+              cursor: "pointer",
+              color: "gray",
+              fontWeight: "500",
+              height: "100px",
+              transition: "color 0.2s ease-in-out",
+              paddingRight: "40px",
+              paddingLeft: "40px",
+              display: "flex",
+              alignItems: "center",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "black")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "gray")}
+          >
+            Certificate
+          </div>
         </div>
       </div>
       <div
@@ -126,6 +150,34 @@ const HeaderSection = () => {
         )}
         <LanguageSwitcher />
       </div>
+      {isScreenImage && (
+        <div
+          onClick={() => setIsScreenImage(false)}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1000,
+          }}
+        >
+          <img
+            src={
+              "assets/images/Certificate_Irina_Malyants_200_Hour_Hatha_Yoga_Teacher.jpg"
+            }
+            alt="Fullscreen"
+            style={{
+              maxWidth: "80vw",
+              maxHeight: "80vh",
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import useIsMobile from "../../hooks/useIsMobile";
+
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
@@ -20,6 +22,7 @@ const ButtonWithScroll: React.FC<ScrollingSection> = (
         cursor: "pointer",
         color: "gray",
         fontWeight: "500",
+        height: "100px",
         transition: "color 0.2s ease-in-out",
         paddingRight: "40px",
       }}
