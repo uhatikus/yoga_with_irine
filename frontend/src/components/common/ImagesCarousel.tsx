@@ -7,18 +7,7 @@ interface CarouselProps {
 export const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
-  images = [
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-    ...images,
-  ];
+  images = [...images, ...images];
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -47,7 +36,7 @@ export const Carousel: React.FC<CarouselProps> = ({ images }) => {
         style={{
           display: "flex",
           transition: "transform 0.5s ease",
-          transform: `translateX(-${currentIndex * 20}%)`,
+          transform: `translateX(-${currentIndex * 300}px)`,
           padding: "0px 20px",
         }}
       >

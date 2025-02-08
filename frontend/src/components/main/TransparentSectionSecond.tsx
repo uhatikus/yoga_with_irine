@@ -14,9 +14,11 @@ const SecondTransparentSection = () => {
           fontSize: "4rem",
           fontWeight: "bold",
           color: "white",
+          textAlign: "center",
         }}
       >
-        Open Your Soul to Yourself
+        {/* Open Your Soul to Yourself */}
+        Hatha Flow
       </h2>
     </div>
   );

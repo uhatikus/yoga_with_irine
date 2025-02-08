@@ -6,33 +6,31 @@ const FAQAccordion = () => {
 
   const faqData = [
     {
-      question: "What languages do you speak?",
-      answer:
-        "The classes are in English, and also I can assist in Russian and un poco de español :)",
+      question: "What is the Hatha Flow Yoga?",
+      answers: [
+        "Hatha Flow yoga combines static asanas with dynamic exercises, synchronized with breathing to build strength, flexibility, and balance :)",
+      ],
     },
     {
-      question: "What's the level?",
-      answer:
+      question: "What are the parts of the class?",
+      answers: [
+        "The class lasts 1.5 h and contains:",
+        "The first part of Breathing Exercises and Meditation to set a calm mood and to center the mind.",
+        "Then we proceed to the sequence of Asanas, targeting all muscle groups, combining dynamic movements with static poses, always focusing on the target zones.",
+        "At the end of the practice, we will fully relax in Shavasana.",
+      ],
+    },
+    {
+      question: "What's the leve of the practicel?",
+      answers: [
         "The level is open. It's perfect for beginners and I also suggest variations for the intermediate level.",
-    },
-    {
-      question: "Can I try for free?",
-      answer: "Yes, of course!",
+      ],
     },
     {
       question: "Is that okay if I've never done yoga before?",
-      answer:
+      answers: [
         "Yes, of course. A lot of people with no experience in yoga come to my classes :) And actually they really enjoy them and start their journey in yoga.",
-    },
-    {
-      question: "Do you usually have brunches afterwards?",
-      answer:
-        "Yes, there we can get to know each other better and spend time together having delicious dishes :)",
-    },
-    {
-      question: "What is your education?",
-      answer:
-        "By education, I'm a medical chemist. So I worked as a scientist in a biology laboratory. Since 2012 I have been practicing yoga with a wonderful teacher. So now it's my 12th year in yoga. In 2023 I studied for 9 months at an Indian school Arhanta Yoga and became a certified yoga teacher.",
+      ],
     },
   ];
 
@@ -97,12 +95,16 @@ const FAQAccordion = () => {
             style={{
               maxHeight: isOpen(index) ? "500px" : "0",
               overflow: "hidden",
-              transition: "max-height 0.3s ease-in-out",
-              borderTop: isOpen(index) ? "1px solid #e2e8f0" : "none",
+              transition: "max-height 0.5s ease-in-out",
+              // borderTop: isOpen(index) ? "1px solid #e2e8f0" : "none",
             }}
           >
             <div style={{ padding: "16px" }}>
-              <p style={{ margin: 0, lineHeight: "1.6" }}>{item.answer}</p>
+              {item.answers.map((ans, i) => (
+                <p key={i} style={{ margin: 0, lineHeight: "1.6" }}>
+                  {ans}
+                </p>
+              ))}
             </div>
           </div>
         </div>

@@ -1,7 +1,11 @@
+// import { useGalleryImages } from "../../hooks/useGalleryImages";
+// import { Carousel } from "../common/ImagesCarousel";
 import { ReviewsCarousel } from "../common/ReviewsCarousel";
 import FAQAccordion from "./FAQ";
 
 const FooterSection = () => {
+  // const imagePaths = useGalleryImages();
+
   return (
     <div
       style={{
@@ -24,7 +28,6 @@ const FooterSection = () => {
           justifyContent: "center",
         }}
       >
-        <FAQAccordion />
         <ReviewsCarousel
           reviews={[
             {
@@ -45,6 +48,8 @@ const FooterSection = () => {
           ]}
         />
       </div>
+      {/* <Carousel images={imagePaths} /> */}
+      <FAQAccordion />
       <h2
         style={{
           fontSize: "4rem",

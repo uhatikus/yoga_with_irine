@@ -1,23 +1,29 @@
+import { useGalleryImages } from "../../hooks/useGalleryImages";
+import useIsMobile from "../../hooks/useIsMobile";
 import { Carousel } from "../common/ImagesCarousel";
+// import FAQAccordion from "./FAQ";
 
 const AboutSection = () => {
+  const imagePaths = useGalleryImages();
+
+  const isMobile = useIsMobile();
   return (
     <div
       style={{
-        height: "1100px",
+        minHeight: "1100px",
         width: "100%",
         backgroundColor: "white",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
+        // justifyContent: "center",
       }}
     >
       <div
         id="about_section"
         style={{
           height: "auto",
-          fontSize: "2.5rem",
+          fontSize: isMobile ? "1.5rem" : "2.3rem",
           width: "70%",
           //   fontWeight: "bold",
           color: "black",
@@ -29,49 +35,24 @@ const AboutSection = () => {
           textAlign: "left",
         }}
       >
-        <span style={{ marginBottom: "20px", textAlign: "center" }}>
-          I am a certified yoga instructor with over 10 years of experience, and
-          I invite you to join my classes in Barcelona. You’ll connect with
-          yourself and the world around you, while also improving your physical
-          well-being!
-        </span>
-
-        <ol style={{ fontSize: "1.2rem", lineHeight: "1.8" }}>
-          <li>
-            <strong>Breathing Exercises:</strong> We begin our session with
-            breathing exercises to set a calm mood.
-          </li>
-          <li>
-            <strong>Meditation Techniques:</strong> Learning new meditation
-            techniques to center the mind.
-          </li>
-          <li>
-            <strong>Asanas:</strong> We move on to a series of asanas targeting
-            all muscle groups, combining dynamic movements with static poses,
-            always focusing on the breath.
-          </li>
-          <li>
-            <strong>Shavasana:</strong> Ending with our favorite Shavasana —
-            deep relaxation.
-          </li>
-        </ol>
+        <p style={{ marginBottom: "20px", textAlign: "center" }}>
+          I'm irina Malyants, a certified yoga instructor with over 10 years of
+          experience in yoga, and I invite you to join my classes in Barcelona.
+          The practice will result in a calm mind, increased body awareness, a
+          deeper connection with yourself and the world around you, as well as
+          flexibility, and endurance! Yoga classes are held in English and the
+          group is international.
+        </p>
       </div>
       <div
         style={{
-          height: "500px",
+          minHeight: "500px",
           width: "100%",
           padding: "0 60px",
         }}
       >
-        <Carousel
-          images={[
-            "assets/images/YOGA_IN_PARK.jpg",
-            "assets/images/YOGA_MAIN.jpg",
-            "assets/images/Tibidabo.jpg",
-            "assets/images/YOGA_IN_STUDIO.jpg",
-            "assets/images/test.jpg",
-          ]}
-        />
+        {/* <FAQAccordion /> */}
+        <Carousel images={imagePaths} />
       </div>
     </div>
   );

@@ -24,14 +24,15 @@ const BackgroundSections = () => {
         style={{
           backgroundImage: "url(assets/images/YOGA_IN_PARK.jpg)",
           width: "100%",
-          height: "1500px",
+          height: "1000px",
           backgroundColor: "white",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundPosition: "center",
+          // backgroundPosition: "center bottom",
+          backgroundPosition: "center top",
           backgroundSize: "cover",
-          margin: "0 0 -500px 0",
+          // margin: "0 0 0 0",
         }}
       ></div>
       {/* Third background section */}
@@ -39,12 +40,14 @@ const BackgroundSections = () => {
         style={{
           backgroundImage: "url(assets/images/YOGA_IN_STUDIO.jpg)",
           width: "100%",
-          height: "1500px",
+          height: "1200px",
           backgroundColor: "white",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundPosition: "center",
+          // backgroundPosition: "center",
+          // backgroundPosition: "center top",
+          backgroundPosition: "center bottom",
           backgroundSize: "cover",
         }}
       ></div>

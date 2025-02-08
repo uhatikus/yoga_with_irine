@@ -6,6 +6,7 @@ export interface Location {
   description: string;
   address: string;
   schedule: string;
+  link: string;
 }
 
 export interface LatLng {

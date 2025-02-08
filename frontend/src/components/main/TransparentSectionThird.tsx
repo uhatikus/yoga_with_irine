@@ -14,6 +14,7 @@ const ThirdTransparentSection = () => {
           fontSize: "4rem",
           fontWeight: "bold",
           color: "white",
+          textAlign: "center",
         }}
       >
         Feel the universe
