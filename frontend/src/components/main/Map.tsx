@@ -1,26 +1,12 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { calculateMapCenter, calculateZoom, Location } from "../utils/mapUtils";
-
-const locations: Location[] = [
-  {
-    name: "ACADEMIA M",
-    position: { lat: 41.377603, lng: 2.155058 },
-    description: "Cozy yoga studio for 10 students",
-    address: "Carrer de Sepúlveda, 57, L'Eixample, 08015 Barcelona",
-    schedule: "Sunday: 12:15 - 13:45",
-    link: "https://maps.app.goo.gl/LPucXx7Rv1Jqc74w6",
-  },
-  {
-    name: "Yoga Club Barcelona",
-    position: { lat: 41.3988579, lng: 2.1596346 },
-    description: "New yoga studio for 20 students",
-    address: "Carrer de Francisco Giner, 14, Grácia, 08012 Barcelona",
-    schedule: "Tuesday & Friday: 19:30 - 21:00",
-    link: "https://maps.app.goo.gl/7WBFC6pGSf6DVFkT8",
-  },
-];
+import {
+  calculateMapCenter,
+  calculateZoom,
+  YogaLocation,
+} from "../utils/mapUtils";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const customIcon = new L.Icon({
   iconUrl: "assets/images/marker-icon-red.png",
@@ -35,12 +21,17 @@ const customIcon = new L.Icon({
 });
 
 const BarcelonaMap = () => {
+  const t = useTranslation();
+
+  const locations: YogaLocation[] = t.locations;
+
   const mapCenter = calculateMapCenter(locations);
   const zoom = calculateZoom(locations);
 
   return (
     <div style={{ width: "100%", height: "500px", overflow: "hidden" }}>
       <MapContainer
+        scrollWheelZoom={false}
         center={mapCenter}
         zoom={zoom}
         style={{ width: "100%", height: "105%", borderRadius: "10px" }}

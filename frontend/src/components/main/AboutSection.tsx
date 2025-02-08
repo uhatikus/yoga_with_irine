@@ -1,11 +1,9 @@
-import { useGalleryImages } from "../../hooks/useGalleryImages";
 import useIsMobile from "../../hooks/useIsMobile";
-import { Carousel } from "../common/ImagesCarousel";
-// import FAQAccordion from "./FAQ";
+import { useTranslation } from "../../hooks/useTranslation";
+import { ImagesCarousel } from "../common/ImagesCarousel";
 
 const AboutSection = () => {
-  const imagePaths = useGalleryImages();
-
+  const t = useTranslation();
   const isMobile = useIsMobile();
   return (
     <div
@@ -16,43 +14,62 @@ const AboutSection = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        // justifyContent: "center",
       }}
     >
       <div
         id="about_section"
         style={{
           height: "auto",
-          fontSize: isMobile ? "1.5rem" : "2.3rem",
+          fontSize: isMobile ? "24px" : "36px",
           width: "70%",
-          //   fontWeight: "bold",
           color: "black",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           padding: "20px",
-          textAlign: "left",
+          fontFamily: "Helvetica, sans-serif",
         }}
       >
-        <p style={{ marginBottom: "20px", textAlign: "center" }}>
-          I'm irina Malyants, a certified yoga instructor with over 10 years of
-          experience in yoga, and I invite you to join my classes in Barcelona.
-          The practice will result in a calm mind, increased body awareness, a
-          deeper connection with yourself and the world around you, as well as
-          flexibility, and endurance! Yoga classes are held in English and the
-          group is international.
-        </p>
+        <blockquote
+          style={{
+            margin: "50px auto",
+            padding: "20px",
+            textAlign: "center",
+            fontStyle: "italic",
+            color: "#333",
+            background: "#f7f7ff",
+            borderLeft: "4px solid #ccd",
+            borderRadius: "8px",
+            boxShadow: "2px 4px 10px rgba(0, 0, 20, 0.1)",
+          }}
+        >
+          <p style={{ marginBottom: "10px" }}>{t.about.quote}</p>
+          <footer
+            style={{
+              fontWeight: "bold",
+              color: "#555",
+              marginTop: "10px",
+              textAlign: "right",
+              fontSize: isMobile ? "18px" : "24px",
+            }}
+          >
+            {t.about.auther}
+          </footer>
+        </blockquote>
       </div>
       <div
         style={{
           minHeight: "500px",
           width: "100%",
           padding: "0 60px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         {/* <FAQAccordion /> */}
-        <Carousel images={imagePaths} />
+        <ImagesCarousel />
       </div>
     </div>
   );

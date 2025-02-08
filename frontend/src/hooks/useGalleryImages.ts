@@ -6,16 +6,16 @@ export function useGalleryImages() {
   useEffect(() => {
     const importImages = async () => {
       const imageImports = import.meta.glob(
-        "/public/assets/images/gallery/*.{jpg,jpeg,png}",
+        "/src/images/gallery/*.{jpg,jpeg,png}",
         { eager: true }
       );
-      let paths = Object.keys(imageImports).map((path) =>
-        path.replace("/public", "")
+      let paths = Object.keys(imageImports).map(
+        (path) => path
+        //   .replace("/public", "")
       );
 
       // Fisher-Yates shuffle
       paths = paths.sort(() => Math.random() - 0.5);
-
       setImages(paths);
     };
 

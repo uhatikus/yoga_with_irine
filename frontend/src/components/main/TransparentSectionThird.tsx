@@ -1,4 +1,7 @@
+import { useTranslation } from "../../hooks/useTranslation";
+
 const ThirdTransparentSection = () => {
+  const t = useTranslation();
   return (
     <div
       style={{
@@ -17,7 +20,7 @@ const ThirdTransparentSection = () => {
           textAlign: "center",
         }}
       >
-        Feel the universe
+        {t.transparent.third}
       </h2>
     </div>
   );

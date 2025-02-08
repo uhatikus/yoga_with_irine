@@ -1,4 +1,10 @@
-export default function PdfViewer({ pdfPath }: { pdfPath: string }) {
+import { FC } from "react";
+
+interface PdfViewerProps {
+  pdfPath: string;
+}
+
+const PdfViewer: FC<PdfViewerProps> = ({ pdfPath }) => {
   return (
     <div
       style={{
@@ -18,4 +24,6 @@ export default function PdfViewer({ pdfPath }: { pdfPath: string }) {
       />
     </div>
   );
-}
+};
+
+export default PdfViewer;

@@ -1,4 +1,7 @@
+import { useTranslation } from "../../hooks/useTranslation";
+
 const SecondTransparentSection = () => {
+  const t = useTranslation();
   return (
     <div
       style={{
@@ -18,7 +21,7 @@ const SecondTransparentSection = () => {
         }}
       >
         {/* Open Your Soul to Yourself */}
-        Hatha Flow
+        {t.transparent.second}
       </h2>
     </div>
   );

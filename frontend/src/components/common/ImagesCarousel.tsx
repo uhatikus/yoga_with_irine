@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { useGalleryImages } from "../../hooks/useGalleryImages";
 
-interface CarouselProps {
-  images: string[];
-}
+export const ImagesCarousel: React.FC = () => {
+  const imagePaths = useGalleryImages();
 
-export const Carousel: React.FC<CarouselProps> = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(10);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
-  images = [...images, ...images];
+  const images = [...imagePaths, ...imagePaths];
+  const imageslength = 60;
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+    setCurrentIndex((prev) => (prev + 1) % imageslength);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    setCurrentIndex((prev) => (prev - 1 + imageslength) % imageslength);
   };
 
   const openFullscreen = (image: string) => {

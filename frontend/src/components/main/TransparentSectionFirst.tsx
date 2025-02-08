@@ -1,4 +1,8 @@
+import { useTranslation } from "../../hooks/useTranslation";
+
 const FirstTransparentSection = () => {
+  const t = useTranslation();
+
   return (
     <div
       style={{
@@ -18,8 +22,7 @@ const FirstTransparentSection = () => {
           textAlign: "center",
         }}
       >
-        Welcome
-        {/* to Hatha Flow Yoga */}
+        {t.transparent.first}
       </h2>
     </div>
   );

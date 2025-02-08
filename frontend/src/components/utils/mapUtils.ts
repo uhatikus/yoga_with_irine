@@ -1,6 +1,6 @@
 // utils/mapUtils.ts
 
-export interface Location {
+export interface YogaLocation {
   name: string;
   position: google.maps.LatLngLiteral;
   description: string;
@@ -17,7 +17,7 @@ export interface LatLng {
 /**
  * Calculates the geographic center of given locations.
  */
-export function calculateMapCenter(locations: Location[]): LatLng {
+export function calculateMapCenter(locations: YogaLocation[]): LatLng {
   if (locations.length === 0) return { lat: 0, lng: 0 };
 
   const latitudes = locations.map((loc) => loc.position.lat);
@@ -32,7 +32,7 @@ export function calculateMapCenter(locations: Location[]): LatLng {
 /**
  * Determines the optimal zoom level based on the spread of locations.
  */
-export function calculateZoom(locations: Location[]): number {
+export function calculateZoom(locations: YogaLocation[]): number {
   if (locations.length === 0) return 10; // Default zoom if no locations
 
   const latitudes = locations.map((loc) => loc.position.lat);
