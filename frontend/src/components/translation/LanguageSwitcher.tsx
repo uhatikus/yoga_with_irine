@@ -1,18 +1,32 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 import { Language } from "../../translations/types";
 
 export const LanguageSwitcher = () => {
   const { language, setLanguage } = useContext(LanguageContext);
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   const flags = {
-    en: "🇬🇧",
-    es: "🇪🇸",
-    ru: "🇷🇺",
+    en: "assets/images/languages/gb.png",
+    es: "assets/images/languages/es.png",
+    ru: "assets/images/languages/ru.png",
   };
 
-  const languages: Language[] = ["en", "es"]; //["en", "es", "ru"];
+  const languages: Language[] = ["en", "es", "ru"];
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (ref.current && !ref.current.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const containerStyle = {
     position: "relative" as const,
@@ -29,7 +43,7 @@ export const LanguageSwitcher = () => {
     borderRadius: "6px",
     cursor: "pointer",
     fontWeight: 500,
-    minWidth: "70px",
+    minWidth: "85px",
     justifyContent: "space-between",
   };
 
@@ -69,9 +83,13 @@ export const LanguageSwitcher = () => {
   };
 
   return (
-    <div style={containerStyle}>
+    <div ref={ref} style={containerStyle}>
       <button style={buttonStyle} onClick={() => setIsOpen(!isOpen)}>
-        <span>{flags[language]}</span>
+        <img
+          src={flags[language]}
+          alt={language}
+          style={{ width: "20px", height: "15px", marginRight: "8px" }}
+        />
         <span>{language.toUpperCase()}</span>
         {/* <span style={{ fontSize: "0.8em" }}>▼</span> */}
       </button>
@@ -87,7 +105,11 @@ export const LanguageSwitcher = () => {
             onMouseEnter={handleOptionHover}
             onMouseLeave={handleOptionLeave}
           >
-            <span>{flags[lang]}</span>
+            <img
+              src={flags[lang]}
+              alt={lang}
+              style={{ width: "20px", height: "15px", marginRight: "8px" }}
+            />
             <span>{lang.toUpperCase()}</span>
           </button>
         ))}

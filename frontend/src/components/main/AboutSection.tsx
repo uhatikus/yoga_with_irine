@@ -1,77 +1,75 @@
-import { Carousel } from "../common/ImagesCarousel";
+import useIsMobile from "../../hooks/useIsMobile";
+import { useTranslation } from "../../hooks/useTranslation";
+import { ImagesCarousel } from "../common/ImagesCarousel";
 
 const AboutSection = () => {
+  const t = useTranslation();
+  const isMobile = useIsMobile();
   return (
     <div
       style={{
-        height: "1100px",
+        minHeight: "1100px",
         width: "100%",
         backgroundColor: "white",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
       }}
     >
       <div
         id="about_section"
         style={{
           height: "auto",
-          fontSize: "2.5rem",
+          fontSize: isMobile ? "24px" : "36px",
           width: "70%",
-          //   fontWeight: "bold",
           color: "black",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           padding: "20px",
-          textAlign: "left",
+          fontFamily: "Helvetica, sans-serif",
         }}
       >
-        <span style={{ marginBottom: "20px", textAlign: "center" }}>
-          I am a certified yoga instructor with over 10 years of experience, and
-          I invite you to join my classes in Barcelona. You’ll connect with
-          yourself and the world around you, while also improving your physical
-          well-being!
-        </span>
-
-        <ol style={{ fontSize: "1.2rem", lineHeight: "1.8" }}>
-          <li>
-            <strong>Breathing Exercises:</strong> We begin our session with
-            breathing exercises to set a calm mood.
-          </li>
-          <li>
-            <strong>Meditation Techniques:</strong> Learning new meditation
-            techniques to center the mind.
-          </li>
-          <li>
-            <strong>Asanas:</strong> We move on to a series of asanas targeting
-            all muscle groups, combining dynamic movements with static poses,
-            always focusing on the breath.
-          </li>
-          <li>
-            <strong>Shavasana:</strong> Ending with our favorite Shavasana —
-            deep relaxation.
-          </li>
-        </ol>
+        <blockquote
+          style={{
+            margin: "50px auto",
+            padding: "20px",
+            textAlign: "center",
+            fontStyle: "italic",
+            color: "#333",
+            background: "#f7f7ff",
+            borderLeft: "4px solid #ccd",
+            borderRadius: "8px",
+            boxShadow: "2px 4px 10px rgba(0, 0, 20, 0.1)",
+          }}
+        >
+          <p style={{ marginBottom: "10px" }}>{t.about.quote}</p>
+          <footer
+            style={{
+              fontWeight: "bold",
+              color: "#555",
+              marginTop: "10px",
+              textAlign: "right",
+              fontSize: isMobile ? "18px" : "24px",
+            }}
+          >
+            {t.about.auther}
+          </footer>
+        </blockquote>
       </div>
       <div
         style={{
-          height: "500px",
+          minHeight: "500px",
           width: "100%",
           padding: "0 60px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <Carousel
-          images={[
-            "assets/images/YOGA_IN_PARK.jpg",
-            "assets/images/YOGA_MAIN.jpg",
-            "assets/images/Tibidabo.jpg",
-            "assets/images/YOGA_IN_STUDIO.jpg",
-            "assets/images/test.jpg",
-          ]}
-        />
+        {/* <FAQAccordion /> */}
+        <ImagesCarousel />
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
-export default function DownloadButton({
-  text,
-  pdfPath,
-  style = {},
-}: {
+import React, { FC } from "react";
+
+interface DownloadButtonProps {
   text: string;
   pdfPath: string;
   style?: React.CSSProperties;
-}) {
+}
+
+const DownloadButton: FC<DownloadButtonProps> = ({ text, pdfPath, style }) => {
   const defaultStyle: React.CSSProperties = {
     color: "gray",
     fontWeight: "500",
@@ -31,4 +31,6 @@ export default function DownloadButton({
       {text}
     </a>
   );
-}
+};
+
+export default DownloadButton;

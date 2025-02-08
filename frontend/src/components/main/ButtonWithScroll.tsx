@@ -1,3 +1,6 @@
+import { useRecoilState } from "recoil";
+import { isMenuOpenState } from "./HeaderSection";
+
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
@@ -13,15 +16,21 @@ export interface ScrollingSection {
 const ButtonWithScroll: React.FC<ScrollingSection> = (
   section: ScrollingSection
 ) => {
+  const [_, setIsMenuOpen] = useRecoilState(isMenuOpenState);
   return (
     <button
-      onClick={() => scrollToSection(section.section_id)}
+      onClick={() => {
+        scrollToSection(section.section_id);
+        setIsMenuOpen(false);
+      }}
       style={{
         cursor: "pointer",
         color: "gray",
         fontWeight: "500",
+        height: "100px",
         transition: "color 0.2s ease-in-out",
         paddingRight: "40px",
+        textAlign: "left",
       }}
       onMouseEnter={(e) => (e.currentTarget.style.color = "black")}
       onMouseLeave={(e) => (e.currentTarget.style.color = "gray")}

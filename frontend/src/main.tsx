@@ -6,6 +6,7 @@ import { routeTree } from "./routeTree.gen";
 
 import { StrictMode } from "react";
 import theme from "./theme";
+import { RecoilRoot } from "recoil";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ChakraProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <RecoilRoot>
+          <RouterProvider router={router} />
+        </RecoilRoot>
       </QueryClientProvider>
     </ChakraProvider>
   </StrictMode>

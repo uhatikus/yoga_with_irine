@@ -1,4 +1,8 @@
+import { useTranslation } from "../../hooks/useTranslation";
+
 const FirstTransparentSection = () => {
+  const t = useTranslation();
+
   return (
     <div
       style={{
@@ -7,6 +11,7 @@ const FirstTransparentSection = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        padding: "20px",
       }}
     >
       <h2
@@ -14,9 +19,10 @@ const FirstTransparentSection = () => {
           fontSize: "4rem",
           fontWeight: "bold",
           color: "white",
+          textAlign: "center",
         }}
       >
-        Welcome
+        {t.transparent.first}
       </h2>
     </div>
   );

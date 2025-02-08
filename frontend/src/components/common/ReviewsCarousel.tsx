@@ -1,34 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "../../hooks/useTranslation";
+import { Review } from "../../translations/types";
 
-interface Review {
-  author: string;
-  stars: number;
-  text: string;
-}
-
-interface ReviewsCarouselProps {
-  reviews: Review[];
-}
-
-export const ReviewsCarousel: React.FC<ReviewsCarouselProps> = ({
-  reviews,
-}) => {
+export const ReviewsCarousel: React.FC = () => {
+  const t = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(10);
 
   // Duplicate reviews to create infinite scrolling effect
-  const extendedReviews = [
-    ...reviews,
-    ...reviews,
-    ...reviews,
-    ...reviews,
-    ...reviews,
-    ...reviews,
-    ...reviews,
-    ...reviews,
-    ...reviews,
-    ...reviews,
-    ...reviews,
-  ];
+  const extendedReviews: Review[] = [...t.reviews, ...t.reviews];
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % extendedReviews.length);
@@ -70,7 +49,14 @@ export const ReviewsCarousel: React.FC<ReviewsCarouselProps> = ({
   };
 
   return (
-    <div style={{ position: "relative", overflow: "hidden" }}>
+    <div
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        maxWidth: "800px",
+        height: "100%",
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -84,6 +70,7 @@ export const ReviewsCarousel: React.FC<ReviewsCarouselProps> = ({
             style={{
               flexShrink: 0,
               width: "100%",
+              maxHeight: "100%",
               padding: "1rem",
               backgroundColor: "white",
               boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",

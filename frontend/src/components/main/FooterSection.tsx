@@ -1,60 +1,134 @@
+// import { useGalleryImages } from "../../hooks/useGalleryImages";
+// import { Carousel } from "../common/ImagesCarousel";
 import { ReviewsCarousel } from "../common/ReviewsCarousel";
 import FAQAccordion from "./FAQ";
 
 const FooterSection = () => {
+  const currentYear = new Date().getFullYear();
+  // const t = useTranslation();
   return (
     <div
       style={{
-        height: "1200px",
+        minHeight: "950px",
         width: "100%",
         backgroundColor: "white",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
+        // justifyContent: "center",
       }}
     >
+      <div id="qa_section" style={{ maxWidth: "90%" }}>
+        <FAQAccordion />
+      </div>
       <div
+        id="reviews_section"
         style={{
-          height: "600px",
-          width: "600px",
+          minHeight: "300px",
+          maxWidth: "90%",
           padding: "0 60px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <FAQAccordion />
-        <ReviewsCarousel
-          reviews={[
-            {
-              author: "John Doe",
-              stars: 4.3,
-              text: "Great product, highly recommended!",
-            },
-            {
-              author: "John Doe",
-              stars: 3.8,
-              text: "Great product, highly recommended!",
-            },
-            {
-              author: "John Doe",
-              stars: 4.6,
-              text: "Great product, highly recommended!",
-            },
-          ]}
-        />
+        <ReviewsCarousel />
       </div>
-      <h2
+      {/* <Carousel images={imagePaths} /> */}
+
+      {/* <div
         style={{
-          fontSize: "4rem",
-          fontWeight: "bold",
-          color: "black",
-          width: "60%",
+          minHeight: "100px",
+          maxWidth: "90%",
+          padding: "0 60px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      > */}
+      <footer
+        id="contacts_section"
+        style={{
+          paddingTop: "100px",
+          height: "250px",
+          width: "100%",
+          textAlign: "center" as const,
+          backgroundColor: "#f4f4ff",
+          color: "#333",
+          fontSize: "14px",
+          lineHeight: "1.6",
+          // paddingBottom: "auto",
         }}
       >
-        +34 600 228 456
-      </h2>
+        <p>
+          Thank you for your interest in my yoga classes! <br></br> Hope to see
+          you soon!
+        </p>
+        <p>
+          Connect with me:{" "}
+          <a
+            href="https://www.instagram.com/yoga_with_irine"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#0077b6",
+              textDecoration: "none",
+              margin: "0 10px",
+            }}
+          >
+            Instagram
+          </a>{" "}
+          |{" "}
+          <a
+            href="https://wa.me/34600259412"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#0077b6",
+              textDecoration: "none",
+              margin: "0 10px",
+            }}
+          >
+            WhatsApp
+          </a>{" "}
+          |{" "}
+          <a
+            href="mailto:iricam88@gmail.com"
+            style={{
+              color: "#0077b6",
+              textDecoration: "none",
+              margin: "0 10px",
+            }}
+          >
+            Email
+          </a>
+        </p>
+        <p>
+          Made by{" "}
+          <a
+            href="https://www.linkedin.com/in/uhatikus"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#0077b6",
+              textDecoration: "none",
+              margin: "0 10px",
+            }}
+          >
+            uhatikus
+          </a>
+        </p>
+        <p
+          style={{
+            fontSize: "12px",
+            color: "#666",
+            marginTop: "10px",
+          }}
+        >
+          © {currentYear} Yoga Open Soul
+        </p>
+      </footer>
+      {/* </div> */}
     </div>
   );
 };
