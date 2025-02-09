@@ -97,7 +97,7 @@ const WhenWhereSection = () => {
           ))}
         </div>
       </div>
-      <div style={{ width: "80%", padding: "20px" }}>
+      <div style={{ width: isMobile ? "100%" : "80%", padding: "20px" }}>
         <BarcelonaMap />
       </div>
     </div>

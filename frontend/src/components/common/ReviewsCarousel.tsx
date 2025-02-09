@@ -20,7 +20,7 @@ export const ReviewsCarousel: React.FC = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000); // Change review every 5 seconds
+    const interval = setInterval(nextSlide, 20000); // Change review every 5 seconds
     return () => clearInterval(interval);
   }, [currentIndex]);
 
