@@ -17,7 +17,7 @@ const BackgroundSections = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          margin: isMobile ? "203px 0 70px 0" : "115px 0 -60px 0",
+          margin: isMobile ? "120px 0 70px 0" : "115px 0 -60px 0",
         }}
       ></div>
 
