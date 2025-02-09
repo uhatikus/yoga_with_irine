@@ -108,10 +108,10 @@ const HeaderSection = () => {
             top: "60px",
             left: 0,
             marginTop: "8px",
-            width: "270px",
+            width: "210px",
             backgroundColor: "white",
             borderRadius: "6px",
-            fontSize: "1.8rem",
+            fontSize: "20px",
             // boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
             zIndex: 2000, // Increased z-index
             // border: "1px solid #ddd", // Added border to make it visible
@@ -119,7 +119,8 @@ const HeaderSection = () => {
             flexDirection: "column",
             paddingLeft: "50px",
             alignItems: "left",
-            boxShadow: `-$10px $10px 0 rgba(0, 0, 0, 0.2)`,
+            // boxShadow: `-$10px $10px 0 rgba(0, 0, 0, 0.2)`,
+            boxShadow: "0 6px 6px rgba(0,0,0,0.1)",
           }}
         >
           {sections.map((section) => (
@@ -131,7 +132,7 @@ const HeaderSection = () => {
               cursor: "pointer",
               color: "gray",
               fontWeight: "500",
-              height: "100px",
+              height: isMobile ? "70px" : "100px",
               transition: "color 0.2s ease-in-out",
               paddingRight: "40px",
               display: "flex",

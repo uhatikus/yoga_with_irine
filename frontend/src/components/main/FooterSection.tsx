@@ -1,9 +1,11 @@
 // import { useGalleryImages } from "../../hooks/useGalleryImages";
 // import { Carousel } from "../common/ImagesCarousel";
+import useIsMobile from "../../hooks/useIsMobile";
 import { ReviewsCarousel } from "../common/ReviewsCarousel";
 import FAQAccordion from "./FAQ";
 
 const FooterSection = () => {
+  const isMobile = useIsMobile();
   const currentYear = new Date().getFullYear();
   // const t = useTranslation();
   return (
@@ -26,7 +28,7 @@ const FooterSection = () => {
         style={{
           minHeight: "300px",
           maxWidth: "90%",
-          padding: "0 60px",
+          padding: isMobile ? "0 5px" : "0 60px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -65,7 +67,7 @@ const FooterSection = () => {
           you soon!
         </p>
         <p>
-          Connect with me:{" "}
+          Contact me:{" "}
           <a
             href="https://www.instagram.com/yoga_with_irine"
             target="_blank"
@@ -93,7 +95,7 @@ const FooterSection = () => {
           </a>{" "}
           |{" "}
           <a
-            href="mailto:iricam88@gmail.com"
+            href="mailto:irine.malyants@gmail.com"
             style={{
               color: "#0077b6",
               textDecoration: "none",

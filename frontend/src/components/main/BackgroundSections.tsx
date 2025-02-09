@@ -1,6 +1,8 @@
+import useIsMobile from "../../hooks/useIsMobile";
 import { ParallaxSection } from "../common/ParallaxSection";
 
 const BackgroundSections = () => {
+  const isMobile = useIsMobile();
   return (
     <ParallaxSection speed={-0.5}>
       {/* Firt background section */}
@@ -9,13 +11,13 @@ const BackgroundSections = () => {
           backgroundImage: "url(assets/images/YOGA_MAIN_good.jpg)",
           backgroundSize: "cover",
           width: "100%",
-          height: "1000px",
+          height: isMobile ? "500px" : "1000px",
           backgroundColor: "white",
           backgroundPosition: "center",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          margin: "115px 0 -60px 0",
+          margin: isMobile ? "203px 0 70px 0" : "115px 0 -60px 0",
         }}
       ></div>
 
@@ -24,7 +26,7 @@ const BackgroundSections = () => {
         style={{
           backgroundImage: "url(assets/images/YOGA_IN_PARK.jpg)",
           width: "100%",
-          height: "1000px",
+          height: isMobile ? "600px" : "1000px",
           backgroundColor: "white",
           display: "flex",
           alignItems: "center",
@@ -32,7 +34,6 @@ const BackgroundSections = () => {
           // backgroundPosition: "center bottom",
           backgroundPosition: "center top",
           backgroundSize: "cover",
-          // margin: "0 0 0 0",
         }}
       ></div>
       {/* Third background section */}

@@ -1,5 +1,6 @@
 import { useRecoilState } from "recoil";
 import { isMenuOpenState } from "./HeaderSection";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -17,6 +18,8 @@ const ButtonWithScroll: React.FC<ScrollingSection> = (
   section: ScrollingSection
 ) => {
   const [_, setIsMenuOpen] = useRecoilState(isMenuOpenState);
+  const isMobile = useIsMobile();
+
   return (
     <button
       onClick={() => {
@@ -27,7 +30,7 @@ const ButtonWithScroll: React.FC<ScrollingSection> = (
         cursor: "pointer",
         color: "gray",
         fontWeight: "500",
-        height: "100px",
+        height: isMobile ? "70px" : "100px",
         transition: "color 0.2s ease-in-out",
         paddingRight: "40px",
         textAlign: "left",
