@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useGalleryImages } from "../../hooks/useGalleryImages";
+import useIsMobile from "../../hooks/useIsMobile";
 
 export const ImagesCarousel: React.FC = () => {
   const imagePaths = useGalleryImages();
+  const isMobile = useIsMobile();
 
   const [currentIndex, setCurrentIndex] = useState(10);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
@@ -36,8 +38,10 @@ export const ImagesCarousel: React.FC = () => {
         style={{
           display: "flex",
           transition: "transform 0.5s ease",
-          transform: `translateX(-${currentIndex * 300}px)`,
-          padding: "0px 20px",
+          transform: isMobile
+            ? `translateX(-${currentIndex * 200}px)`
+            : `translateX(-${currentIndex * 300}px)`,
+          padding: isMobile ? "0px 20px" : "0px 20px",
         }}
       >
         {images.map((image, index) => (
@@ -46,7 +50,7 @@ export const ImagesCarousel: React.FC = () => {
               src={image}
               alt={`Slide ${index + 1}`}
               style={{
-                height: "300px",
+                height: isMobile ? "200px" : "300px",
                 width: "auto",
                 objectFit: "cover",
                 cursor: "pointer",

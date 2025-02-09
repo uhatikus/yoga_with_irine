@@ -8,9 +8,9 @@ const AboutSection = () => {
   return (
     <div
       style={{
-        minHeight: "1100px",
+        minHeight: isMobile ? "700px" : "1100px",
         width: "100%",
-        backgroundColor: "white",
+        backgroundColor: "#e6f6ff", //"#e0f8ff",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -20,21 +20,21 @@ const AboutSection = () => {
         id="about_section"
         style={{
           height: "auto",
-          fontSize: isMobile ? "24px" : "36px",
-          width: "70%",
+          fontSize: isMobile ? "20px" : "32px",
+          width: isMobile ? "100%" : "70%",
           color: "black",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          padding: "20px",
+          padding: "10px",
           fontFamily: "Helvetica, sans-serif",
         }}
       >
         <blockquote
           style={{
             margin: "50px auto",
-            padding: "20px",
+            padding: "20px 20px 20px 20px",
             textAlign: "center",
             fontStyle: "italic",
             color: "#333",
@@ -44,14 +44,16 @@ const AboutSection = () => {
             boxShadow: "2px 4px 10px rgba(0, 0, 20, 0.1)",
           }}
         >
-          <p style={{ marginBottom: "10px" }}>{t.about.quote}</p>
+          <p style={{ marginBottom: isMobile ? "0px" : "10px" }}>
+            {t.about.quote}
+          </p>
           <footer
             style={{
               fontWeight: "bold",
               color: "#555",
               marginTop: "10px",
               textAlign: "right",
-              fontSize: isMobile ? "18px" : "24px",
+              fontSize: isMobile ? "16px" : "20px",
             }}
           >
             {t.about.auther}
@@ -60,12 +62,13 @@ const AboutSection = () => {
       </div>
       <div
         style={{
-          minHeight: "500px",
+          minHeight: isMobile ? "300px" : "500px",
           width: "100%",
-          padding: "0 60px",
+          padding: isMobile ? "50px 0 50px 0" : "0 60px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          backgroundColor: "white",
         }}
       >
         {/* <FAQAccordion /> */}

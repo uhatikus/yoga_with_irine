@@ -1,11 +1,13 @@
+import useIsMobile from "../../hooks/useIsMobile";
 import { useTranslation } from "../../hooks/useTranslation";
 
 const ThirdTransparentSection = () => {
+  const isMobile = useIsMobile();
   const t = useTranslation();
   return (
     <div
       style={{
-        height: "1000px",
+        height: isMobile ? "500px" : "1000px",
         width: "100%",
         display: "flex",
         alignItems: "center",
@@ -14,7 +16,7 @@ const ThirdTransparentSection = () => {
     >
       <h2
         style={{
-          fontSize: "4rem",
+          fontSize: isMobile ? "2.5rem" : "4rem",
           fontWeight: "bold",
           color: "white",
           textAlign: "center",
