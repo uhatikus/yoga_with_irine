@@ -47,7 +47,7 @@ export function useGalleryImages() {
     ];
 
     const shuffledPaths = initialGalleryImagesNames
-      .map((path) => path.replace("/public", ""))
+      .map((path) => path.replace("public/", ""))
       .sort(() => Math.random() - 0.5);
 
     setImages(shuffledPaths);
