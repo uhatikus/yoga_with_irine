@@ -7,6 +7,7 @@ import {
   YogaLocation,
 } from "../utils/mapUtils";
 import { useTranslation } from "../../hooks/useTranslation";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const customIcon = new L.Icon({
   iconUrl: "assets/images/marker-icon-red.png",
@@ -22,6 +23,7 @@ const customIcon = new L.Icon({
 
 const BarcelonaMap = () => {
   const t = useTranslation();
+  const isMobile = useIsMobile();
 
   const locations: YogaLocation[] = t.locations;
 
@@ -32,6 +34,7 @@ const BarcelonaMap = () => {
     <div style={{ width: "100%", height: "500px", overflow: "hidden" }}>
       <MapContainer
         scrollWheelZoom={false}
+        dragging={!isMobile}
         center={mapCenter}
         zoom={zoom}
         style={{ width: "100%", height: "105%", borderRadius: "10px" }}

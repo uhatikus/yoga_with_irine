@@ -43,18 +43,18 @@ export function calculateZoom(locations: YogaLocation[]): number {
   const maxDiff = Math.max(latDiff, lngDiff); // Use the largest range
 
   const zoomLevels = [
-    { diff: 0.0005, zoom: 21 },
-    { diff: 0.001, zoom: 20 },
-    { diff: 0.005, zoom: 18 },
-    { diff: 0.01, zoom: 16 },
-    { diff: 0.05, zoom: 14 },
-    { diff: 0.1, zoom: 12 },
-    { diff: 0.5, zoom: 10 },
-    { diff: 1, zoom: 8 },
-    { diff: 5, zoom: 6 },
-    { diff: 10, zoom: 4 },
-    { diff: 20, zoom: 3 },
-    { diff: 40, zoom: 2 },
+    { diff: 0.0005, zoom: 20 },
+    { diff: 0.001, zoom: 19 },
+    { diff: 0.005, zoom: 17 },
+    { diff: 0.01, zoom: 15 },
+    { diff: 0.05, zoom: 13 },
+    { diff: 0.1, zoom: 11 },
+    { diff: 0.5, zoom: 9 },
+    { diff: 1, zoom: 7 },
+    { diff: 5, zoom: 5 },
+    { diff: 10, zoom: 3 },
+    { diff: 20, zoom: 2 },
+    { diff: 40, zoom: 1 },
     { diff: 80, zoom: 1 },
   ];
 

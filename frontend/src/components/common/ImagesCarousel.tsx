@@ -33,7 +33,13 @@ export const ImagesCarousel: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <div style={{ position: "relative", width: "100%", overflow: "hidden" }}>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        overflow: isMobile ? "scroll" : "hidden",
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -61,36 +67,40 @@ export const ImagesCarousel: React.FC = () => {
           </div>
         ))}
       </div>
-      <button
-        onClick={prevSlide}
-        style={{
-          position: "absolute",
-          left: 0,
-          top: "50%",
-          transform: "translateY(-50%)",
-          fontSize: "84px",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-        }}
-      >
-        &#8249;
-      </button>
-      <button
-        onClick={nextSlide}
-        style={{
-          position: "absolute",
-          right: 0,
-          top: "50%",
-          transform: "translateY(-50%)",
-          fontSize: "84px",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-        }}
-      >
-        &#8250;
-      </button>
+      {!isMobile && (
+        <button
+          onClick={prevSlide}
+          style={{
+            position: "absolute",
+            left: 0,
+            top: "50%",
+            transform: "translateY(-50%)",
+            fontSize: "84px",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          &#8249;
+        </button>
+      )}
+      {!isMobile && (
+        <button
+          onClick={nextSlide}
+          style={{
+            position: "absolute",
+            right: 0,
+            top: "50%",
+            transform: "translateY(-50%)",
+            fontSize: "84px",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          &#8250;
+        </button>
+      )}
       {fullscreenImage && (
         <div
           onClick={closeFullscreen}
@@ -115,6 +125,41 @@ export const ImagesCarousel: React.FC = () => {
               maxHeight: "80vh",
             }}
           />
+          {/* <button
+            onClick={prevSlide}
+            style={{
+              position: "absolute",
+              left: 0,
+              top: "50%",
+              transform: "translateY(-50%)",
+              fontSize: "84px",
+              color: "white",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            &#8249;
+          </button>
+          <button
+            onClick={() => {
+              nextSlide();
+              openFullscreen(image);
+            }}
+            style={{
+              position: "absolute",
+              right: 0,
+              top: "50%",
+              transform: "translateY(-50%)",
+              fontSize: "84px",
+              color: "white",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            &#8250;
+          </button> */}
         </div>
       )}
     </div>
