@@ -1,10 +1,8 @@
-import useIsMobile from "../../hooks/useIsMobile";
 import { ReviewsCarousel } from "../common/ReviewsCarousel";
 import FAQAccordion from "../common/FAQ";
 import { useTranslation } from "../../hooks/useTranslation";
 
 const FooterSection = () => {
-  const isMobile = useIsMobile();
   const currentYear = new Date().getFullYear();
   const t = useTranslation();
   return (
@@ -13,11 +11,9 @@ const FooterSection = () => {
         minHeight: "700px",
         width: "100%",
         backgroundColor: "white",
-        // backgroundColor: "#f8f8ff",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        // justifyContent: "center",
       }}
     >
       <div id="qa_section" style={{ maxWidth: "100%" }}>
@@ -28,7 +24,6 @@ const FooterSection = () => {
         style={{
           minHeight: "300px",
           maxWidth: "90%",
-          // padding: isMobile ? "0px" : "0 20px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -85,7 +80,6 @@ const FooterSection = () => {
                 height: "32px",
                 marginRight: "5px",
                 marginBlock: "6px",
-                // verticalAlign: "middle",
               }}
             />
           </a>
@@ -107,7 +101,6 @@ const FooterSection = () => {
                 height: "32px",
                 marginRight: "5px",
                 marginBlock: "6px",
-                // verticalAlign: "middle",
               }}
             />
           </a>
@@ -127,7 +120,6 @@ const FooterSection = () => {
                 height: "30px",
                 marginRight: "5px",
                 marginBlock: "6px",
-                // verticalAlign: "middle",
               }}
             />
           </a>
@@ -154,7 +146,6 @@ const FooterSection = () => {
           </a>
         </p>
       </footer>
-      {/* </div> */}
     </div>
   );
 };
