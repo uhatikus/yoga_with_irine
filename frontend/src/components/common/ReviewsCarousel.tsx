@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
 import { Review } from "../../translations/types";
+import useIsMobile from "../../hooks/useIsMobile";
 
 export const ReviewsCarousel: React.FC = () => {
   const t = useTranslation();
+  const isMobile = useIsMobile();
   const [currentIndex, setCurrentIndex] = useState(10);
 
   // Duplicate reviews to create infinite scrolling effect
@@ -20,7 +22,7 @@ export const ReviewsCarousel: React.FC = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 20000); // Change review every 5 seconds
+    const interval = setInterval(nextSlide, 20000); // Change review every 20 seconds
     return () => clearInterval(interval);
   }, [currentIndex]);
 
@@ -71,10 +73,9 @@ export const ReviewsCarousel: React.FC = () => {
               flexShrink: 0,
               width: "100%",
               maxHeight: "100%",
-              padding: "1rem",
+              padding: isMobile ? "15px" : "30px",
               backgroundColor: "white",
-              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-              borderRadius: "0.5rem",
+              borderRadius: "50px",
             }}
           >
             <div

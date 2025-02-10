@@ -21,6 +21,8 @@ export const cat: TranslationContent = {
   },
   schedule: {
     schedule: "Schedule",
+    address: "Address",
+    classSchedule: "Class Schedule",
     sessions: [
       {
         day: "Tuesday",
@@ -161,4 +163,8 @@ export const cat: TranslationContent = {
       text: "Què vull dir, no vaig fer ioga massa sovint, però puc comparar) amb tu em vaig sentir molt còmoda, des de tu es nota l'obertura i la bondat, la qual cosa és molt important per a un instructor de ioga) malauradament vaig anar poc, però si no fos per la distància, hi continuaria anant amb molt de gust) em va agradar que algunes postures canviaven cada vegada, també vaig veure que estaves atenta a tots, això és molt agradable😊 i també tens una veu super relaxant, cosa que també és molt important en aquest context) gràcies per aquest encontre🙏",
     },
   ],
+  footer: {
+    phrase1: "Thank you for your interest in my yoga classes!",
+    phrase2: "Hope to see you soon!",
+  },
 };

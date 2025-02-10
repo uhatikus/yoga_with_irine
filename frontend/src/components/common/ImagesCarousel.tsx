@@ -8,8 +8,11 @@ export const ImagesCarousel: React.FC = () => {
 
   const [currentIndex, setCurrentIndex] = useState(10);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+  const [fullscreenImage_i, setFullscreenImage_i] = useState<number | null>(
+    null
+  );
   const images = [...imagePaths, ...imagePaths];
-  const imageslength = 60;
+  const imageslength = images.length !== 0 ? images.length : 60;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % imageslength);
@@ -19,12 +22,28 @@ export const ImagesCarousel: React.FC = () => {
     setCurrentIndex((prev) => (prev - 1 + imageslength) % imageslength);
   };
 
-  const openFullscreen = (image: string) => {
+  const nextImage = () => {
+    setFullscreenImage(images[(fullscreenImage_i! + 1) % imageslength]);
+    setFullscreenImage_i((fullscreenImage_i! + 1) % imageslength);
+  };
+
+  const prevImage = () => {
+    setFullscreenImage(
+      images[(fullscreenImage_i! - 1 + imageslength) % imageslength]
+    );
+    setFullscreenImage_i(
+      (fullscreenImage_i! - 1 + imageslength) % imageslength
+    );
+  };
+
+  const openFullscreen = (image: string, index: number) => {
     setFullscreenImage(image);
+    setFullscreenImage_i(index);
   };
 
   const closeFullscreen = () => {
     setFullscreenImage(null);
+    setFullscreenImage_i(null);
   };
 
   useEffect(() => {
@@ -62,7 +81,7 @@ export const ImagesCarousel: React.FC = () => {
                 cursor: "pointer",
                 padding: "0px 20px",
               }}
-              onClick={() => openFullscreen(image)}
+              onClick={() => openFullscreen(image, index)}
             />
           </div>
         ))}
@@ -125,42 +144,47 @@ export const ImagesCarousel: React.FC = () => {
               maxHeight: "80vh",
             }}
           />
-          {/* <button
-            onClick={prevSlide}
-            style={{
-              position: "absolute",
-              left: 0,
-              top: "50%",
-              transform: "translateY(-50%)",
-              fontSize: "84px",
-              color: "white",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            &#8249;
-          </button>
-          <button
-            onClick={() => {
-              nextSlide();
-              openFullscreen(image);
-            }}
-            style={{
-              position: "absolute",
-              right: 0,
-              top: "50%",
-              transform: "translateY(-50%)",
-              fontSize: "84px",
-              color: "white",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            &#8250;
-          </button> */}
         </div>
+      )}
+      {fullscreenImage && (
+        <button
+          onClick={prevImage}
+          style={{
+            position: "fixed",
+            left: 0,
+            top: "50%",
+            transform: "translateY(-50%)",
+            fontSize: "84px",
+            color: "white",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            zIndex: 1001,
+            paddingLeft: isMobile ? "0px" : "50px",
+          }}
+        >
+          &#8249;
+        </button>
+      )}
+      {fullscreenImage && (
+        <button
+          onClick={nextImage}
+          style={{
+            position: "fixed",
+            right: 0,
+            top: "50%",
+            transform: "translateY(-50%)",
+            fontSize: "84px",
+            color: "white",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            zIndex: 1001,
+            paddingRight: isMobile ? "0px" : "50px",
+          }}
+        >
+          &#8250;
+        </button>
       )}
     </div>
   );

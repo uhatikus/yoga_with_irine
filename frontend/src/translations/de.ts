@@ -21,6 +21,8 @@ export const de: TranslationContent = {
   },
   schedule: {
     schedule: "Schedule",
+    address: "Address",
+    classSchedule: "Class Schedule",
     sessions: [
       {
         day: "Tuesday",
@@ -161,4 +163,8 @@ export const de: TranslationContent = {
       text: "Was soll ich sagen, ich habe nicht so oft Yoga gemacht, aber ich kann es vergleichen) Mit dir war es sehr angenehm, du strahlst Offenheit und Freundlichkeit aus, was für einen Yogalehrer sehr wichtig ist) Leider war ich nicht oft da, aber wenn es nicht die Entfernung wäre, würde ich mit Freude weiterhin kommen) Es gefällt mir, dass du jedes Mal die Übungen änderst, außerdem habe ich gesehen, dass du auf jeden achtest, was wirklich nett ist😊 Und deine Stimme ist super entspannend, was in diesem Kontext auch sehr wichtig ist) Vielen Dank für diese Begegnung 🙏",
     },
   ],
+  footer: {
+    phrase1: "Thank you for your interest in my yoga classes!",
+    phrase2: "Hope to see you soon!",
+  },
 };

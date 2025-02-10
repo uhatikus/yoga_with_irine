@@ -76,12 +76,12 @@ const BarcelonaMap = () => {
                   }}
                 >
                   <a href={location.link} style={{ color: "inherit" }}>
-                    <strong>📍 Address:</strong> <br />
+                    <strong>📍 {t.schedule.address}:</strong> <br />
                     {location.address}
                   </a>
                 </p>
                 <p style={{ fontSize: "14px", color: "#1F2937" }}>
-                  <strong>🕒 Class Schedule:</strong> <br />
+                  <strong>🕒 {t.schedule.classSchedule}:</strong> <br />
                   {location.schedule}
                 </p>
               </div>

@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
-import { LanguageSwitcher } from "../translation/LanguageSwitcher";
+import { LanguageSwitcher } from "../common/LanguageSwitcher";
 import { Menu, X } from "lucide-react";
 import useIsMobile from "../../hooks/useIsMobile";
-import ButtonWithScroll, { ScrollingSection } from "./ButtonWithScroll";
+import ButtonWithScroll, { ScrollingSection } from "../common/ButtonWithScroll";
 import { atom, useRecoilState } from "recoil";
 
 // Define the recoil atom for menu state
@@ -15,27 +15,10 @@ export const isMenuOpenState = atom({
 const HeaderSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useRecoilState(isMenuOpenState);
   const [isScreenImage, setIsScreenImage] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
   const isMobile = useIsMobile();
   const t = useTranslation();
 
-  //   const toggleMenu = () => {
-  //     setIsMenuOpen(!isMenuOpen);
-  //   };
-
-  const handleCertificateClick = () => {
-    setIsScreenImage(true);
-    setIsMenuOpen(false);
-    // const url = "/certificate";
-    // window.open(url, "_blank");
-  };
-
-  useEffect(() => {
-    if (!isMobile) {
-      setIsMenuOpen(false);
-    }
-  }, [isMobile]);
+  const ref = useRef<HTMLDivElement>(null);
 
   const sections: ScrollingSection[] = [
     { section_name: t.header.about, section_id: "about_section" },
@@ -45,18 +28,29 @@ const HeaderSection = () => {
     { section_name: t.header.contacts, section_id: "contacts_section" },
   ];
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (ref.current && !ref.current.contains(event.target as Node)) {
-      setIsMenuOpen(false);
-    }
-  };
-
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    if (!isMobile) {
+      setIsMenuOpen(false);
+    }
+  }, [isMobile]);
+
+  const handleCertificateClick = () => {
+    setIsScreenImage(true);
+    setIsMenuOpen(false);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (ref.current && !ref.current.contains(event.target as Node)) {
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <div
@@ -78,6 +72,7 @@ const HeaderSection = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "left",
+          fontSize: "16px",
         }}
       >
         {!isMobile &&
@@ -112,14 +107,11 @@ const HeaderSection = () => {
             backgroundColor: "white",
             borderRadius: "6px",
             fontSize: "20px",
-            // boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-            zIndex: 2000, // Increased z-index
-            // border: "1px solid #ddd", // Added border to make it visible
-            display: isMenuOpen ? "flex" : "none", // Alternative to conditional rendering
+            zIndex: 2000,
+            display: isMenuOpen ? "flex" : "none",
             flexDirection: "column",
             paddingLeft: "50px",
             alignItems: "left",
-            // boxShadow: `-$10px $10px 0 rgba(0, 0, 0, 0.2)`,
             boxShadow: "0 6px 6px rgba(0,0,0,0.1)",
           }}
         >
@@ -166,6 +158,7 @@ const HeaderSection = () => {
               fontWeight: "500",
               transition: "color 0.2s ease-in-out",
               paddingRight: "40px",
+              fontSize: "16px",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "black")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "gray")}

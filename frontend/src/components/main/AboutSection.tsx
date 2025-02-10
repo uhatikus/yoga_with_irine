@@ -10,7 +10,7 @@ const AboutSection = () => {
       style={{
         minHeight: isMobile ? "700px" : "1100px",
         width: "100%",
-        backgroundColor: "#e6f6ff", //"#e0f8ff",
+        backgroundColor: "#E8F6FD", //"#e0f8ff", #e6f6ff
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
