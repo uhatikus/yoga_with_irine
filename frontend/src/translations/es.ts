@@ -16,8 +16,8 @@ export const es: TranslationContent = {
   },
   about: {
     quote:
-      "«Soy Irina Malyants, instructora de yoga certificada con más de 10 años de experiencia en yoga, y te invito a mis clases en Barcelona. La práctica te ayudará a lograr una mente tranquila, mayor conciencia corporal, una conexión más profunda contigo mismo y con el mundo que te rodea, además de mejorar tu flexibilidad y resistencia. Las clases se imparten en inglés y el grupo es internacional.»",
-    auther: "— Tu profesora de yoga, Irina Malyants",
+      "« Soy Irina Malyants, profesora de yoga certificada con más de 10 años de experiencia. Te invito a mis clases en Barcelona. Las clases se imparten en inglés y el grupo es internacional. La práctica te ayudará a calmar la mente, aumentar la conciencia corporal, conectar más profundamente contigo mismo y con el mundo que te rodea, además de mejorar tu flexibilidad y resistencia. »",
+    auther: "— Tu profesora de yoga, Irinas",
   },
   schedule: {
     schedule: "Horario",
@@ -73,9 +73,9 @@ export const es: TranslationContent = {
       question: "¿Cuáles son las partes de la clase?",
       answers: [
         "La clase dura 1,5 horas e incluye:",
-        "Primera parte: ejercicios de respiración y meditación para calmar la mente y centrarse.",
-        "Luego, seguimos con una secuencia de asanas que trabajan todos los grupos musculares, combinando movimientos dinámicos con posturas estáticas, siempre enfocándonos en las zonas objetivo.",
-        "Al final de la práctica, nos relajamos completamente en Shavasana.",
+        "- Primera parte: ejercicios de respiración y meditación para calmar la mente y centrarse.",
+        "- Luego, seguimos con una secuencia de asanas que trabajan todos los grupos musculares, combinando movimientos dinámicos con posturas estáticas, siempre enfocándonos en las zonas objetivo.",
+        "- Al final de la práctica, nos relajamos completamente en Shavasana.",
       ],
     },
     {

@@ -16,8 +16,8 @@ export const en: TranslationContent = {
   },
   about: {
     quote:
-      "« I'm Irina Malyants, a certified yoga instructor with over 10 years of experience in yoga, and I invite you to join my classes in Barcelona. The practice will result in a calm mind, increased body awareness, a deeper connection with yourself and the world around you, as well as flexibility and endurance! Yoga classes are held in English and the group is international »",
-    auther: "— Your Yoga Teacher, Irina Malyants",
+      "« I'm Irina Malyants, a certified yoga teacher with over 10 years of experience in yoga. I invite you to join my classes in Barcelona. Yoga classes are held in English and the group is international. The practice will result in a calm mind, increased body awareness, a deeper connection with yourself and the world around you, as well as flexibility and endurance! »",
+    auther: "— Your Yoga Teacher, Irina",
   },
   schedule: {
     schedule: "Schedule",
@@ -73,9 +73,9 @@ export const en: TranslationContent = {
       question: "What are the parts of the class?",
       answers: [
         "The class lasts 1.5 h and contains:",
-        "The first part of Breathing Exercises and Meditation to set a calm mood and to center the mind.",
-        "Then we proceed to the sequence of Asanas, targeting all muscle groups, combining dynamic movements with static poses, always focusing on the target zones.",
-        "At the end of the practice, we will fully relax in Shavasana.",
+        "- The first part of Breathing Exercises and Meditation to set a calm mood and to center the mind.",
+        "- Then we proceed to the sequence of Asanas, targeting all muscle groups, combining dynamic movements with static poses, always focusing on the target zones.",
+        "- At the end of the practice, we will fully relax in Shavasana.",
       ],
     },
     {

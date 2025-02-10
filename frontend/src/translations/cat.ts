@@ -73,9 +73,9 @@ export const cat: TranslationContent = {
       question: "What are the parts of the class?",
       answers: [
         "The class lasts 1.5 h and contains:",
-        "The first part of Breathing Exercises and Meditation to set a calm mood and to center the mind.",
-        "Then we proceed to the sequence of Asanas, targeting all muscle groups, combining dynamic movements with static poses, always focusing on the target zones.",
-        "At the end of the practice, we will fully relax in Shavasana.",
+        "- The first part of Breathing Exercises and Meditation to set a calm mood and to center the mind.",
+        "- Then we proceed to the sequence of Asanas, targeting all muscle groups, combining dynamic movements with static poses, always focusing on the target zones.",
+        "- At the end of the practice, we will fully relax in Shavasana.",
       ],
     },
     {
