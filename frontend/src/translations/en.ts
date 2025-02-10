@@ -21,6 +21,8 @@ export const en: TranslationContent = {
   },
   schedule: {
     schedule: "Schedule",
+    address: "Address",
+    classSchedule: "Class Schedule",
     sessions: [
       {
         day: "Tuesday",
@@ -161,4 +163,8 @@ export const en: TranslationContent = {
       text: "What can I say, I didn't attend yoga often, but I have something to compare it to. It was very cozy with you; you exude openness and kindness, which is incredibly important for a yoga instructor. Unfortunately, I didn't attend many sessions, but if it weren't for the distance, I would have continued for sure. I love that some exercises change every time, and I can see that you pay attention to everyone — it's really sweet 😊. You also have an incredibly calming voice, which is also very important in this field. Thank you for the experience 🙏.",
     },
   ],
+  footer: {
+    phrase1: "Thank you for your interest in my yoga classes!",
+    phrase2: "Hope to see you soon!",
+  },
 };

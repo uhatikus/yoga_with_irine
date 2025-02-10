@@ -1,7 +1,7 @@
 import useIsMobile from "../../hooks/useIsMobile";
 import { useTranslation } from "../../hooks/useTranslation";
 import { YogaSession } from "../../translations/types";
-import BarcelonaMap from "./Map";
+import BarcelonaMap from "../common/Map";
 
 const WhenWhereSection = () => {
   const t = useTranslation();
@@ -15,7 +15,7 @@ const WhenWhereSection = () => {
         minHeight: "1000px",
         minWidth: isMobile ? "10px" : "700px",
         width: "100%",
-        backgroundColor: "white",
+        backgroundColor: "#f8fffa",
         // opacity: 0.8,
         display: "flex",
         alignItems: "center",

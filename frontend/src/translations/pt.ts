@@ -1,6 +1,6 @@
 import { TranslationContent } from "./types";
 
-export const en: TranslationContent = {
+export const pt: TranslationContent = {
   header: {
     about: "About",
     schedule: "Schedule",
@@ -21,6 +21,8 @@ export const en: TranslationContent = {
   },
   schedule: {
     schedule: "Schedule",
+    address: "Address",
+    classSchedule: "Class Schedule",
     sessions: [
       {
         day: "Tuesday",
@@ -161,4 +163,8 @@ export const en: TranslationContent = {
       text: "Quero dizer que não pratico yoga com frequência, mas posso comparar) Com a Irina foi muito agradável, ela irradia abertura e gentileza, o que é muito importante para um professor de yoga) Infelizmente, eu não fui com frequência, mas se não fosse pela distância, eu viria com prazer) Gosto do fato de você mudar os exercícios a cada vez, e também notei que você presta atenção em cada aluno, o que é muito agradável😊 E sua voz é super relaxante, o que também é muito importante nesse contexto) Obrigada por essa experiência 🙏",
     },
   ],
+  footer: {
+    phrase1: "Thank you for your interest in my yoga classes!",
+    phrase2: "Hope to see you soon!",
+  },
 };

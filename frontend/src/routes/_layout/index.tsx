@@ -13,6 +13,16 @@ export const Route = createFileRoute("/_layout/")({
   component: Main,
 });
 
+// #E8F6FD;
+// #496078;
+// #E7E8DB;
+// #30373F;
+// #7D92A2;
+// #93A2AA;
+// #D4D1BF;
+// #6B4F48;
+// #5D5F5F;
+// #ADB8B9;
 function Main() {
   return (
     <LanguageProvider>

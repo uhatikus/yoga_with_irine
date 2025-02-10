@@ -11,16 +11,10 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as CertificateImport } from './routes/certificate'
 import { Route as LayoutImport } from './routes/_layout'
 import { Route as LayoutIndexImport } from './routes/_layout/index'
 
 // Create/Update Routes
-
-const CertificateRoute = CertificateImport.update({
-  path: '/certificate',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const LayoutRoute = LayoutImport.update({
   id: '/_layout',
@@ -40,10 +34,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutImport
       parentRoute: typeof rootRoute
     }
-    '/certificate': {
-      preLoaderRoute: typeof CertificateImport
-      parentRoute: typeof rootRoute
-    }
     '/_layout/': {
       preLoaderRoute: typeof LayoutIndexImport
       parentRoute: typeof LayoutImport
@@ -55,7 +45,6 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   LayoutRoute.addChildren([LayoutIndexRoute]),
-  CertificateRoute,
 ])
 
 /* prettier-ignore-end */

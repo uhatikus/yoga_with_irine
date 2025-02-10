@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { isMenuOpenState } from "./HeaderSection";
+import { isMenuOpenState } from "../main/HeaderSection";
 import useIsMobile from "../../hooks/useIsMobile";
 
 const scrollToSection = (id: string) => {
@@ -28,15 +28,15 @@ const ButtonWithScroll: React.FC<ScrollingSection> = (
       }}
       style={{
         cursor: "pointer",
-        color: "gray",
+        color: "#5D5F5F",
         fontWeight: "500",
         height: isMobile ? "70px" : "100px",
         transition: "color 0.2s ease-in-out",
         paddingRight: "40px",
         textAlign: "left",
       }}
-      onMouseEnter={(e) => (e.currentTarget.style.color = "black")}
-      onMouseLeave={(e) => (e.currentTarget.style.color = "gray")}
+      onMouseEnter={(e) => (e.currentTarget.style.color = "#30373F")}
+      onMouseLeave={(e) => (e.currentTarget.style.color = "#5D5F5F")}
     >
       {section.section_name}
     </button>

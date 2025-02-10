@@ -8,12 +8,30 @@ export const LanguageSwitcher = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   const flags = {
+    cat: "assets/images/languages/cat.png",
+    cn: "assets/images/languages/cn.png",
+    de: "assets/images/languages/de.png",
     en: "assets/images/languages/gb.png",
     es: "assets/images/languages/es.png",
+    fr: "assets/images/languages/fr.png",
+    it: "assets/images/languages/it.png",
+    pt: "assets/images/languages/pt.png",
     ru: "assets/images/languages/ru.png",
+    ua: "assets/images/languages/ua.png",
   };
 
-  const languages: Language[] = ["en", "es", "ru"];
+  const languages: Language[] = [
+    "en",
+    "es",
+    "cat",
+    "it",
+    "fr",
+    "de",
+    "pt",
+    "ua",
+    "ru",
+    "cn",
+  ];
 
   const handleClickOutside = (event: MouseEvent) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -31,6 +49,7 @@ export const LanguageSwitcher = () => {
   const containerStyle = {
     position: "relative" as const,
     width: "fit-content",
+    color: "#5D5F5F",
   };
 
   const buttonStyle = {
@@ -43,8 +62,7 @@ export const LanguageSwitcher = () => {
     borderRadius: "6px",
     cursor: "pointer",
     fontWeight: 500,
-    minWidth: "85px",
-    justifyContent: "space-between",
+    minWidth: "80px",
   };
 
   const dropdownStyle = {

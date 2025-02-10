@@ -1,6 +1,16 @@
 import { YogaLocation } from "../components/utils/mapUtils";
 
-export type Language = "en" | "es" | "ru";
+export type Language =
+  | "cat"
+  | "cn"
+  | "de"
+  | "en"
+  | "es"
+  | "fr"
+  | "it"
+  | "pt"
+  | "ru"
+  | "ua";
 
 export interface YogaSession {
   day: string;
@@ -39,9 +49,15 @@ export interface TranslationContent {
   };
   schedule: {
     schedule: string;
+    address: string;
+    classSchedule: string;
     sessions: YogaSession[];
   };
   locations: YogaLocation[];
   questionAnswers: QuestionAnswers[];
   reviews: Review[];
+  footer: {
+    phrase1: string;
+    phrase2: string;
+  };
 }

@@ -21,6 +21,8 @@ export const es: TranslationContent = {
   },
   schedule: {
     schedule: "Horario",
+    address: "Dirección",
+    classSchedule: "Horario de clases",
     sessions: [
       {
         day: "Martes",
@@ -161,4 +163,8 @@ export const es: TranslationContent = {
       text: "Quiero decir que no practico yoga muy a menudo, pero sí puedo compararlo) Con Irina, todo fue muy agradable, su apertura y amabilidad se notan, y eso es muy importante para un instructor de yoga) Lamentablemente, no pude asistir mucho, pero si no fuera por la distancia, seguiría viniendo con mucho gusto) Me gusta que cada vez cambies las posturas, y también vi que prestas atención a cada estudiante, lo cual es muy cálido😊 Además, tu voz es increíblemente relajante, lo cual también es muy importante en una clase de yoga) Gracias por esta experiencia 🙏",
     },
   ],
+  footer: {
+    phrase1: "¡Gracias por tu interés en mis clases de yoga!",
+    phrase2: "¡Espero verte pronto!",
+  },
 };
