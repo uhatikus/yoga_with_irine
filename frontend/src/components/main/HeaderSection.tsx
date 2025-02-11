@@ -84,7 +84,7 @@ const HeaderSection = () => {
             style={{
               background: "none",
               border: "none",
-              color: "black",
+              color: "#5D5F5F",
               cursor: "pointer",
               padding: "8px",
               minWidth: "20px",
@@ -122,7 +122,7 @@ const HeaderSection = () => {
             onClick={handleCertificateClick}
             style={{
               cursor: "pointer",
-              color: "gray",
+              color: "#5D5F5F",
               fontWeight: "500",
               height: isMobile ? "70px" : "100px",
               transition: "color 0.2s ease-in-out",
@@ -131,8 +131,8 @@ const HeaderSection = () => {
               alignItems: "center",
               textAlign: "left",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "black")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "gray")}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#30373F")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#5D5F5F")}
           >
             {t.header.certificate}
           </div>
@@ -154,14 +154,14 @@ const HeaderSection = () => {
             onClick={handleCertificateClick}
             style={{
               cursor: "pointer",
-              color: "gray",
+              color: "#5D5F5F",
               fontWeight: "500",
               transition: "color 0.2s ease-in-out",
               paddingRight: "40px",
               fontSize: "16px",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "black")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "gray")}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#30373F")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#5D5F5F")}
           >
             {t.header.certificate}
           </div>

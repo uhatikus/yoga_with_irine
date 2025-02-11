@@ -80,6 +80,7 @@ const FooterSection = () => {
                 height: "32px",
                 marginRight: "5px",
                 marginBlock: "6px",
+                opacity: "85%",
               }}
             />
           </a>

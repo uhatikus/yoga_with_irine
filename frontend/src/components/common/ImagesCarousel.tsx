@@ -72,7 +72,7 @@ export const ImagesCarousel: React.FC = () => {
         {images.map((image, index) => (
           <div key={index} style={{ flexShrink: 0 }}>
             <img
-              src={image}
+              src={image.replace("gallery", "gallery/compressed")}
               alt={`Slide ${index + 1}`}
               style={{
                 height: isMobile ? "200px" : "300px",

@@ -2,42 +2,42 @@ import { TranslationContent } from "./types";
 
 export const cn: TranslationContent = {
   header: {
-    about: "About",
-    schedule: "Schedule",
-    q_and_a: "Q&A",
-    reviews: "Reviews",
-    contacts: "Contacts",
-    certificate: "Certificate",
+    about: "关于",
+    schedule: "课程表",
+    q_and_a: "Q & A",
+    reviews: "评价",
+    contacts: "联系方式",
+    certificate: "证书",
   },
   transparent: {
-    first: "Welcome",
-    second: "Hatha Flow",
-    third: "Feel the universe",
+    first: "欢迎",
+    second: "哈他流瑜伽",
+    third: "感受宇宙",
   },
   about: {
     quote:
-      "« I'm Irina Malyants, a certified yoga instructor with over 10 years of experience in yoga, and I invite you to join my classes in Barcelona. The practice will result in a calm mind, increased body awareness, a deeper connection with yourself and the world around you, as well as flexibility and endurance! Yoga classes are held in English and the group is international »",
-    auther: "— Your Yoga Teacher, Irina Malyants",
+      "« 我是 Irina Malyants，一名拥有超过 10 年瑜伽经验的认证瑜伽教师。我邀请您参加我在巴塞罗那的课程。瑜伽课程以英语授课，学员来自世界各地。练习将帮助您平静心灵，提高身体意识，更深入地与自己和周围的世界联系，同时增强柔韧性和耐力！ »",
+    auther: "— 你的瑜伽老师，Irina",
   },
   schedule: {
-    schedule: "Schedule",
-    address: "Address",
-    classSchedule: "Class Schedule",
+    schedule: "课程表",
+    address: "地址",
+    classSchedule: "课程安排",
     sessions: [
       {
-        day: "Tuesday",
+        day: "星期二",
         time: "19:30 - 21:00",
         metro: "Diagonal",
         link: "https://maps.app.goo.gl/7WBFC6pGSf6DVFkT8",
       },
       {
-        day: "Friday",
+        day: "星期五",
         time: "19:30 - 21:00",
         metro: "Diagonal",
         link: "https://maps.app.goo.gl/7WBFC6pGSf6DVFkT8",
       },
       {
-        day: "Sunday",
+        day: "星期日",
         time: "12:15 - 13:45",
         metro: "Rocafort",
         link: "https://maps.app.goo.gl/LPucXx7Rv1Jqc74w6",
@@ -48,46 +48,46 @@ export const cn: TranslationContent = {
     {
       name: "ACADEMIA M",
       position: { lat: 41.377603, lng: 2.155058 },
-      description: "Cozy yoga studio for 10 students",
-      address: "Carrer de Sepúlveda, 57, L'Eixample, 08015 Barcelona",
-      schedule: "Sunday: 12:15 - 13:45",
+      description: "温馨的瑜伽教室，可容纳 10 名学员",
+      address: "Carrer de Sepúlveda, 57, L'Eixample, 08015 巴塞罗那",
+      schedule: "星期日: 12:15 - 13:45",
       link: "https://maps.app.goo.gl/LPucXx7Rv1Jqc74w6",
     },
     {
       name: "Yoga Club Barcelona",
       position: { lat: 41.3988579, lng: 2.1596346 },
-      description: "New yoga studio for 20 students",
-      address: "Carrer de Francisco Giner, 14, Grácia, 08012 Barcelona",
-      schedule: "Tuesday & Friday: 19:30 - 21:00",
+      description: "全新瑜伽教室，可容纳 20 名学员",
+      address: "Carrer de Francisco Giner, 14, Gràcia, 08012 巴塞罗那",
+      schedule: "星期二 & 星期五: 19:30 - 21:00",
       link: "https://maps.app.goo.gl/7WBFC6pGSf6DVFkT8",
     },
   ],
   questionAnswers: [
     {
-      question: "What is the Hatha Flow Yoga?",
+      question: "什么是哈他流瑜伽？",
       answers: [
-        "Hatha Flow yoga combines static asanas with dynamic exercises, synchronized with breathing to build strength, flexibility, and balance :)",
+        "哈他流瑜伽结合静态体式和动态练习，与呼吸同步，以增强力量、柔韧性和平衡能力 :)",
       ],
     },
     {
-      question: "What are the parts of the class?",
+      question: "课程包含哪些部分？",
       answers: [
-        "The class lasts 1.5 h and contains:",
-        "- The first part of Breathing Exercises and Meditation to set a calm mood and to center the mind.",
-        "- Then we proceed to the sequence of Asanas, targeting all muscle groups, combining dynamic movements with static poses, always focusing on the target zones.",
-        "- At the end of the practice, we will fully relax in Shavasana.",
+        "课程时长 1.5 小时，包含：",
+        "- 第一部分：呼吸练习和冥想，帮助您平静心灵，集中注意力。",
+        "- 接下来，我们进行一系列体式练习，涵盖所有肌肉群，结合动态动作与静态姿势，重点关注目标区域。",
+        "- 最后，我们在大休息（Shavasana）中彻底放松。",
       ],
     },
     {
-      question: "What's the leve of the practicel?",
+      question: "课程适合什么水平的学员？",
       answers: [
-        "The level is open. It's perfect for beginners and I also suggest variations for the intermediate level.",
+        "课程适合所有水平。非常适合初学者，我也会提供适合中级学员的变体练习。",
       ],
     },
     {
-      question: "Is that okay if I've never done yoga before?",
+      question: "如果我从未练过瑜伽，可以参加吗？",
       answers: [
-        "Yes, of course. A lot of people with no experience in yoga come to my classes :) And actually they really enjoy them and start their journey in yoga.",
+        "当然可以！很多没有瑜伽经验的学员都来参加我的课程 :) 他们很喜欢，并开始了自己的瑜伽之旅。",
       ],
     },
   ],
@@ -164,7 +164,7 @@ export const cn: TranslationContent = {
     },
   ],
   footer: {
-    phrase1: "Thank you for your interest in my yoga classes!",
-    phrase2: "Hope to see you soon!",
+    phrase1: "感谢你对我的瑜伽课程感兴趣！",
+    phrase2: "希望很快见到你！",
   },
 };

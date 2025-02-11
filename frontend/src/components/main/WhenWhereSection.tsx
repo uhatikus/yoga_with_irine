@@ -15,7 +15,7 @@ const WhenWhereSection = () => {
         minHeight: "1000px",
         minWidth: isMobile ? "10px" : "700px",
         width: "100%",
-        backgroundColor: "#f8fffa",
+        backgroundColor: "#ffffff",
         // opacity: 0.8,
         display: "flex",
         alignItems: "center",
@@ -66,21 +66,30 @@ const WhenWhereSection = () => {
               <span style={{ marginLeft: isMobile ? "0" : "auto" }}>
                 {session.time}{" "}
               </span>
-              <a
-                href={session.link}
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
                 style={{
-                  // color: "#3498db",
+                  color: "#3498db",
                   display: "flex",
                   fontSize: "30px",
-                  textDecoration: "none",
-                  fontWeight: "bold",
                   flexDirection: "row",
                   marginLeft: isMobile ? "0" : "auto",
                 }}
               >
-                <img
+                📍
+                <a
+                  href={session.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: "#3498db",
+                    display: "flex",
+                    fontSize: "30px",
+                    textDecoration: "underline",
+                    flexDirection: "row",
+                    marginLeft: isMobile ? "0" : "auto",
+                  }}
+                >
+                  {/* <img
                   src="/assets/images/barcelona-metro-logo.png"
                   alt="Metro"
                   style={{
@@ -90,9 +99,11 @@ const WhenWhereSection = () => {
                     marginBlock: "6px",
                     verticalAlign: "middle",
                   }}
-                />
-                {session.metro}
-              </a>
+                /> */}
+
+                  {session.metro}
+                </a>
+              </div>
             </div>
           ))}
         </div>

@@ -55,7 +55,7 @@ export const ReviewsCarousel: React.FC = () => {
       style={{
         position: "relative",
         overflow: "hidden",
-        maxWidth: "800px",
+        maxWidth: "765px",
         height: "100%",
       }}
     >

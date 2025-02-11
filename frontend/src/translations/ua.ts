@@ -2,42 +2,42 @@ import { TranslationContent } from "./types";
 
 export const ua: TranslationContent = {
   header: {
-    about: "About",
-    schedule: "Schedule",
-    q_and_a: "Q&A",
-    reviews: "Reviews",
-    contacts: "Contacts",
-    certificate: "Certificate",
+    about: "Про нас",
+    schedule: "Розклад",
+    q_and_a: "Q & A",
+    reviews: "Відгуки",
+    contacts: "Контакти",
+    certificate: "Сертифікат",
   },
   transparent: {
-    first: "Welcome",
-    second: "Hatha Flow",
-    third: "Feel the universe",
+    first: "Ласкаво просимо",
+    second: "Хатха Флоу",
+    third: "Відчуй Всесвіт",
   },
   about: {
     quote:
-      "« I'm Irina Malyants, a certified yoga instructor with over 10 years of experience in yoga, and I invite you to join my classes in Barcelona. The practice will result in a calm mind, increased body awareness, a deeper connection with yourself and the world around you, as well as flexibility and endurance! Yoga classes are held in English and the group is international »",
-    auther: "— Your Yoga Teacher, Irina Malyants",
+      "« Мене звати Ірина Мальянц, я сертифікований викладач йоги з понад 10-річним досвідом. Запрошую вас на мої заняття у Барселоні. Заняття проходять англійською мовою у міжнародній групі. Практика йоги допоможе вам заспокоїти розум, підвищити усвідомленість, встановити глибокий зв’язок із собою та навколишнім світом, а також розвинути гнучкість і витривалість! »",
+    auther: "— Ваша викладачка йоги, Ірина",
   },
   schedule: {
-    schedule: "Schedule",
-    address: "Address",
-    classSchedule: "Class Schedule",
+    schedule: "Розклад",
+    address: "Адреса",
+    classSchedule: "Розклад занять",
     sessions: [
       {
-        day: "Tuesday",
+        day: "Вівторок",
         time: "19:30 - 21:00",
         metro: "Diagonal",
         link: "https://maps.app.goo.gl/7WBFC6pGSf6DVFkT8",
       },
       {
-        day: "Friday",
+        day: "П’ятниця",
         time: "19:30 - 21:00",
         metro: "Diagonal",
         link: "https://maps.app.goo.gl/7WBFC6pGSf6DVFkT8",
       },
       {
-        day: "Sunday",
+        day: "Неділя",
         time: "12:15 - 13:45",
         metro: "Rocafort",
         link: "https://maps.app.goo.gl/LPucXx7Rv1Jqc74w6",
@@ -48,46 +48,46 @@ export const ua: TranslationContent = {
     {
       name: "ACADEMIA M",
       position: { lat: 41.377603, lng: 2.155058 },
-      description: "Cozy yoga studio for 10 students",
-      address: "Carrer de Sepúlveda, 57, L'Eixample, 08015 Barcelona",
-      schedule: "Sunday: 12:15 - 13:45",
+      description: "Затишна студія для 10 учнів",
+      address: "Carrer de Sepúlveda, 57, L'Eixample, 08015 Барселона",
+      schedule: "Неділя: 12:15 - 13:45",
       link: "https://maps.app.goo.gl/LPucXx7Rv1Jqc74w6",
     },
     {
       name: "Yoga Club Barcelona",
       position: { lat: 41.3988579, lng: 2.1596346 },
-      description: "New yoga studio for 20 students",
-      address: "Carrer de Francisco Giner, 14, Grácia, 08012 Barcelona",
-      schedule: "Tuesday & Friday: 19:30 - 21:00",
+      description: "Нова студія для 20 учнів",
+      address: "Carrer de Francisco Giner, 14, Gràcia, 08012 Барселона",
+      schedule: "Вівторок & П’ятниця: 19:30 - 21:00",
       link: "https://maps.app.goo.gl/7WBFC6pGSf6DVFkT8",
     },
   ],
   questionAnswers: [
     {
-      question: "What is the Hatha Flow Yoga?",
+      question: "Що таке Хатха Флоу йога?",
       answers: [
-        "Hatha Flow yoga combines static asanas with dynamic exercises, synchronized with breathing to build strength, flexibility, and balance :)",
+        "Хатха Флоу поєднує статичні асани з динамічними вправами, синхронізованими з диханням, для розвитку сили, гнучкості та балансу :)",
       ],
     },
     {
-      question: "What are the parts of the class?",
+      question: "З чого складається заняття?",
       answers: [
-        "The class lasts 1.5 h and contains:",
-        "- The first part of Breathing Exercises and Meditation to set a calm mood and to center the mind.",
-        "- Then we proceed to the sequence of Asanas, targeting all muscle groups, combining dynamic movements with static poses, always focusing on the target zones.",
-        "- At the end of the practice, we will fully relax in Shavasana.",
+        "Заняття триває 1,5 години та включає:",
+        "- Перша частина: дихальні вправи та медитація, щоб налаштуватися на спокійний стан та зосередити розум.",
+        "- Далі ми переходимо до послідовності асан, що впливають на всі групи м’язів, поєднуючи динамічні рухи зі статичними позами, зосереджуючи увагу на ключових зонах.",
+        "- Наприкінці заняття ми повністю розслабимося в Шавасані.",
       ],
     },
     {
-      question: "What's the leve of the practicel?",
+      question: "Який рівень підготовки потрібен?",
       answers: [
-        "The level is open. It's perfect for beginners and I also suggest variations for the intermediate level.",
+        "Рівень відкритий. Ідеально підходить для початківців, також пропонуються варіанти для середнього рівня.",
       ],
     },
     {
-      question: "Is that okay if I've never done yoga before?",
+      question: "Чи можу я прийти, якщо ніколи не займався йогою?",
       answers: [
-        "Yes, of course. A lot of people with no experience in yoga come to my classes :) And actually they really enjoy them and start their journey in yoga.",
+        "Так, звичайно. Багато людей без досвіду приходять на мої заняття :) І їм дуже подобається, вони починають свій шлях у йозі.",
       ],
     },
   ],
@@ -164,7 +164,7 @@ export const ua: TranslationContent = {
     },
   ],
   footer: {
-    phrase1: "Thank you for your interest in my yoga classes!",
-    phrase2: "Hope to see you soon!",
+    phrase1: "Дякую за ваш інтерес до моїх занять йогою!",
+    phrase2: "Сподіваюся побачити вас скоро!",
   },
 };

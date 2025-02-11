@@ -46,6 +46,7 @@ const FAQAccordion = () => {
               justifyContent: "space-between",
               alignItems: "center",
               background: "white",
+              borderRadius: "8px",
               border: "none",
               cursor: "pointer",
               textAlign: "left",
