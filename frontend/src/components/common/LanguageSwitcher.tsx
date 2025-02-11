@@ -102,7 +102,12 @@ export const LanguageSwitcher = () => {
 
   return (
     <div ref={ref} style={containerStyle}>
-      <button style={buttonStyle} onClick={() => setIsOpen(!isOpen)}>
+      <button
+        style={buttonStyle}
+        onClick={() => setIsOpen(!isOpen)}
+        onMouseEnter={(e) => (e.currentTarget.style.color = "#30373F")}
+        onMouseLeave={(e) => (e.currentTarget.style.color = "#5D5F5F")}
+      >
         <img
           src={flags[language]}
           alt={language}

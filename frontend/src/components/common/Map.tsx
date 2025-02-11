@@ -71,12 +71,15 @@ const BarcelonaMap = () => {
                 <p
                   style={{
                     fontSize: "14px",
-                    color: "#1F2937",
+                    // color: "#1E40AF",
                     marginTop: "8px",
                   }}
                 >
-                  <a href={location.link} style={{ color: "inherit" }}>
-                    <strong>📍 {t.schedule.address}:</strong> <br />
+                  <strong>📍 {t.schedule.address}:</strong> <br />
+                  <a
+                    href={location.link}
+                    style={{ color: "#1E40AF", textDecoration: "underline" }}
+                  >
                     {location.address}
                   </a>
                 </p>

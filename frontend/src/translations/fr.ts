@@ -2,42 +2,42 @@ import { TranslationContent } from "./types";
 
 export const fr: TranslationContent = {
   header: {
-    about: "About",
-    schedule: "Schedule",
-    q_and_a: "Q&A",
-    reviews: "Reviews",
+    about: "À propos",
+    schedule: "Horaire",
+    q_and_a: "Q & A",
+    reviews: "Avis",
     contacts: "Contacts",
-    certificate: "Certificate",
+    certificate: "Certificat",
   },
   transparent: {
-    first: "Welcome",
+    first: "Bienvenue",
     second: "Hatha Flow",
-    third: "Feel the universe",
+    third: "Ressens l'univers",
   },
   about: {
     quote:
-      "« I'm Irina Malyants, a certified yoga instructor with over 10 years of experience in yoga, and I invite you to join my classes in Barcelona. The practice will result in a calm mind, increased body awareness, a deeper connection with yourself and the world around you, as well as flexibility and endurance! Yoga classes are held in English and the group is international »",
-    auther: "— Your Yoga Teacher, Irina Malyants",
+      "« Je suis Irina Malyants, professeure de yoga certifiée avec plus de 10 ans d'expérience. Je t'invite à mes cours à Barcelone. Les cours sont donnés en anglais et le groupe est international. La pratique t’aidera à calmer l’esprit, accroître la conscience corporelle, te connecter plus profondément à toi-même et au monde qui t’entoure, ainsi qu'à améliorer ta flexibilité et ton endurance. »",
+    auther: "— Ta professeure de yoga, Irina",
   },
   schedule: {
-    schedule: "Schedule",
-    address: "Address",
-    classSchedule: "Class Schedule",
+    schedule: "Horaire",
+    address: "Adresse",
+    classSchedule: "Emploi du temps des cours",
     sessions: [
       {
-        day: "Tuesday",
+        day: "Mardi",
         time: "19:30 - 21:00",
         metro: "Diagonal",
         link: "https://maps.app.goo.gl/7WBFC6pGSf6DVFkT8",
       },
       {
-        day: "Friday",
+        day: "Vendredi",
         time: "19:30 - 21:00",
         metro: "Diagonal",
         link: "https://maps.app.goo.gl/7WBFC6pGSf6DVFkT8",
       },
       {
-        day: "Sunday",
+        day: "Dimanche",
         time: "12:15 - 13:45",
         metro: "Rocafort",
         link: "https://maps.app.goo.gl/LPucXx7Rv1Jqc74w6",
@@ -48,46 +48,46 @@ export const fr: TranslationContent = {
     {
       name: "ACADEMIA M",
       position: { lat: 41.377603, lng: 2.155058 },
-      description: "Cozy yoga studio for 10 students",
-      address: "Carrer de Sepúlveda, 57, L'Eixample, 08015 Barcelona",
-      schedule: "Sunday: 12:15 - 13:45",
+      description: "Studio de yoga chaleureux pour 10 élèves",
+      address: "Carrer de Sepúlveda, 57, L'Eixample, 08015 Barcelone",
+      schedule: "Dimanche: 12:15 - 13:45",
       link: "https://maps.app.goo.gl/LPucXx7Rv1Jqc74w6",
     },
     {
       name: "Yoga Club Barcelona",
       position: { lat: 41.3988579, lng: 2.1596346 },
-      description: "New yoga studio for 20 students",
-      address: "Carrer de Francisco Giner, 14, Grácia, 08012 Barcelona",
-      schedule: "Tuesday & Friday: 19:30 - 21:00",
+      description: "Nouveau studio de yoga pour 20 élèves",
+      address: "Carrer de Francisco Giner, 14, Gràcia, 08012 Barcelone",
+      schedule: "Mardi et vendredi: 19:30 - 21:00",
       link: "https://maps.app.goo.gl/7WBFC6pGSf6DVFkT8",
     },
   ],
   questionAnswers: [
     {
-      question: "What is the Hatha Flow Yoga?",
+      question: "Qu'est-ce que le Hatha Flow Yoga ?",
       answers: [
-        "Hatha Flow yoga combines static asanas with dynamic exercises, synchronized with breathing to build strength, flexibility, and balance :)",
+        "Le Hatha Flow yoga combine des asanas statiques avec des exercices dynamiques synchronisés avec la respiration pour développer la force, la flexibilité et l’équilibre :)",
       ],
     },
     {
-      question: "What are the parts of the class?",
+      question: "Comment se déroule un cours ?",
       answers: [
-        "The class lasts 1.5 h and contains:",
-        "The first part of Breathing Exercises and Meditation to set a calm mood and to center the mind.",
-        "Then we proceed to the sequence of Asanas, targeting all muscle groups, combining dynamic movements with static poses, always focusing on the target zones.",
-        "At the end of the practice, we will fully relax in Shavasana.",
+        "Le cours dure 1h30 et comprend :",
+        "- Première partie : exercices de respiration et méditation pour calmer l'esprit et se recentrer.",
+        "- Ensuite, nous pratiquons une séquence d’asanas qui sollicitent tous les groupes musculaires, combinant mouvements dynamiques et postures statiques, tout en se concentrant sur les zones cibles.",
+        "- À la fin de la pratique, nous nous détendons complètement en Shavasana.",
       ],
     },
     {
-      question: "What's the leve of the practicel?",
+      question: "Quel est le niveau du cours ?",
       answers: [
-        "The level is open. It's perfect for beginners and I also suggest variations for the intermediate level.",
+        "Le niveau est ouvert. C'est parfait pour les débutants, et je propose aussi des variations pour le niveau intermédiaire.",
       ],
     },
     {
-      question: "Is that okay if I've never done yoga before?",
+      question: "Puis-je venir si je n'ai jamais fait de yoga ?",
       answers: [
-        "Yes, of course. A lot of people with no experience in yoga come to my classes :) And actually they really enjoy them and start their journey in yoga.",
+        "Oui, bien sûr. Beaucoup de personnes sans expérience en yoga participent à mes cours :) En fait, elles adorent et commencent leur parcours dans le yoga.",
       ],
     },
   ],
@@ -164,7 +164,7 @@ export const fr: TranslationContent = {
     },
   ],
   footer: {
-    phrase1: "Thank you for your interest in my yoga classes!",
-    phrase2: "Hope to see you soon!",
+    phrase1: "Merci pour votre intérêt pour mes cours de yoga !",
+    phrase2: "J'espère vous voir bientôt !",
   },
 };
